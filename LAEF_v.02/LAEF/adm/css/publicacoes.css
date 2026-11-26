@@ -1,0 +1,626 @@
+
+/* ==========================================
+   LAEF — PUBLICAÇÕES
+   Painel administrativo
+========================================== */
+
+
+/* ==========================================
+   VARIÁVEIS
+========================================== */
+
+:root {
+    --pub-navy: #123552;
+    --pub-navy-dark: #09283f;
+    --pub-blue: #24618a;
+    --pub-light: #f1f5f7;
+    --pub-border: #d8e2e9;
+    --pub-muted: #60717e;
+    --pub-white: #ffffff;
+    --pub-green: #23845b;
+    --pub-red: #c44949;
+}
+
+
+/* ==========================================
+   ESTRUTURA GERAL
+========================================== */
+
+.admin-page {
+    background: var(--pub-light);
+    color: #243746;
+}
+
+.admin-main {
+    min-width: 0;
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.admin-header h1 {
+    margin: 8px 0 0;
+    color: var(--pub-navy-dark);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.section-index {
+    display: block;
+    color: var(--pub-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* ==========================================
+   USUÁRIO ADMINISTRADOR
+========================================== */
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-user strong,
+.admin-user small {
+    display: block;
+}
+
+.admin-user strong {
+    font-size: 13px;
+    color: var(--pub-navy);
+}
+
+.admin-user small {
+    margin-top: 4px;
+    font-size: 11px;
+    color: var(--pub-muted);
+}
+
+.user-symbol {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--pub-navy);
+    color: white;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   APRESENTAÇÃO
+========================================== */
+
+.admin-welcome {
+    padding: 32px;
+    margin-bottom: 28px;
+    background: var(--pub-white);
+    border: 1px solid var(--pub-border);
+    border-radius: 8px;
+}
+
+.admin-welcome h2 {
+    margin: 12px 0;
+    color: var(--pub-navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.admin-welcome p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--pub-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   INDICADORES
+========================================== */
+
+.admin-statistics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.admin-stat-card {
+    padding: 24px;
+    background: var(--pub-white);
+    border: 1px solid var(--pub-border);
+    border-radius: 7px;
+}
+
+.admin-stat-card span {
+    display: block;
+    color: var(--pub-muted);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.admin-stat-card strong {
+    display: block;
+    margin: 12px 0 6px;
+    color: var(--pub-navy);
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.admin-stat-card small {
+    color: #84939d;
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   SEÇÕES ADMINISTRATIVAS
+========================================== */
+
+.admin-section {
+    padding: 30px;
+    margin-bottom: 28px;
+    background: var(--pub-white);
+    border: 1px solid var(--pub-border);
+    border-radius: 8px;
+}
+
+.admin-section-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 26px;
+}
+
+.admin-section-header h2 {
+    margin: 10px 0 6px;
+    color: var(--pub-navy);
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.admin-section-header p {
+    margin: 0;
+    color: var(--pub-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--pub-navy);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 13px;
+    border: 1px solid #cbd7df;
+    border-radius: 5px;
+    background: white;
+    color: #243746;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--pub-blue);
+    box-shadow: 0 0 0 3px rgba(36, 97, 138, .10);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9aa8b1;
+}
+
+.form-group small {
+    color: var(--pub-muted);
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   UPLOAD DE ARQUIVOS
+========================================== */
+
+.file-upload-area {
+    padding: 22px;
+    border: 1px dashed #aebfca;
+    border-radius: 6px;
+    background: #f8fafb;
+}
+
+.file-upload-area input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background: transparent;
+}
+
+.file-upload-area p {
+    margin: 10px 0 0;
+    color: var(--pub-muted);
+    font-size: 11px;
+}
+
+.file-current-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px;
+    margin-top: 12px;
+    border: 1px solid var(--pub-border);
+    border-radius: 5px;
+    background: #f8fafb;
+    font-size: 12px;
+}
+
+.file-current-info[hidden] {
+    display: none;
+}
+
+.button-text-danger {
+    padding: 6px 10px;
+    border: none;
+    background: transparent;
+    color: var(--pub-red);
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   BOTÕES DO FORMULÁRIO
+========================================== */
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--pub-border);
+}
+
+.button-primary,
+.button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 11px 20px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.button-primary {
+    border: 1px solid var(--pub-navy);
+    background: var(--pub-navy);
+    color: white;
+}
+
+.button-primary:hover {
+    background: var(--pub-navy-dark);
+}
+
+.button-secondary {
+    border: 1px solid var(--pub-border);
+    background: white;
+    color: var(--pub-navy);
+}
+
+.button-secondary:hover {
+    background: var(--pub-light);
+}
+
+.button-primary:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.form-message {
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.form-message.success {
+    color: var(--pub-green);
+}
+
+.form-message.error {
+    color: var(--pub-red);
+}
+
+
+/* ==========================================
+   FILTROS
+========================================== */
+
+.publication-filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+
+/* ==========================================
+   TABELA
+========================================== */
+
+.admin-table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--pub-border);
+    border-radius: 6px;
+}
+
+.admin-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table thead {
+    background: #f3f6f8;
+}
+
+.admin-table th {
+    padding: 15px;
+    color: var(--pub-navy);
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.admin-table td {
+    padding: 16px 15px;
+    border-top: 1px solid var(--pub-border);
+    color: #425563;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+    background: #fafcfd;
+}
+
+.admin-table td strong {
+    display: block;
+    max-width: 350px;
+    color: var(--pub-navy);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.publication-author {
+    display: block;
+    margin-top: 5px;
+    color: var(--pub-muted);
+    font-size: 10px;
+}
+
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.status-publicado {
+    background: #e6f4ed;
+    color: #23754e;
+}
+
+.status-rascunho {
+    background: #f0f1f3;
+    color: #687581;
+}
+
+
+/* ==========================================
+   AÇÕES DA TABELA
+========================================== */
+
+.publication-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.publication-actions button {
+    padding: 7px 10px;
+    border: 1px solid var(--pub-border);
+    border-radius: 4px;
+    background: white;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.action-edit {
+    color: var(--pub-blue);
+}
+
+.action-edit:hover {
+    border-color: var(--pub-blue);
+    background: #edf4f8;
+}
+
+.action-delete {
+    color: var(--pub-red);
+}
+
+.action-delete:hover {
+    border-color: var(--pub-red);
+    background: #fff2f2;
+}
+
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
+.admin-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px 0;
+    color: var(--pub-muted);
+    font-size: 11px;
+}
+
+.admin-footer a {
+    color: var(--pub-blue);
+    text-decoration: none;
+}
+
+.admin-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .admin-statistics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .publication-filters {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .publication-filters .form-group:first-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .admin-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-header h1 {
+        font-size: 25px;
+    }
+
+    .admin-welcome,
+    .admin-section {
+        padding: 20px;
+    }
+
+    .admin-welcome h2 {
+        font-size: 23px;
+    }
+
+    .admin-statistics {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .admin-stat-card {
+        padding: 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .publication-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .publication-filters .form-group:first-child {
+        grid-column: auto;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+    .admin-footer {
+        flex-direction: column;
+    }
+
+}

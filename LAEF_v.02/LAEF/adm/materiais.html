@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gerenciamento de materiais e experimentos do LAEF.">
+    <title>Materiais | Administração LAEF</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/materiais.css">
+    <script type="module" src="js/materiais.js"></script>
+</head>
+
+<body class="admin-page">
+<div class="admin-layout">
+
+    <aside class="admin-sidebar">
+        <a href="dashboard.html" class="admin-logo">
+            <div class="admin-logo-symbol">LAEF<span>.</span></div>
+            <div>
+                <strong>LAEF</strong>
+                <small>PAINEL ADMINISTRATIVO</small>
+            </div>
+        </a>
+
+        <div class="sidebar-label">MENU PRINCIPAL</div>
+
+        <nav class="admin-nav">
+            <a href="dashboard.html" class="admin-nav-item">
+                <span class="admin-nav-icon">⌂</span><span>Dashboard</span>
+            </a>
+            <a href="equipe.html" class="admin-nav-item">
+                <span class="admin-nav-icon">♙</span><span>Equipe</span>
+            </a>
+            <a href="ensino.html" class="admin-nav-item">
+                <span class="admin-nav-icon">∑</span><span>Ensino</span>
+            </a>
+            <a href="pesquisa.html" class="admin-nav-item">
+                <span class="admin-nav-icon">⌕</span><span>Pesquisa</span>
+            </a>
+            <a href="extensao.html" class="admin-nav-item">
+                <span class="admin-nav-icon">◎</span><span>Extensão</span>
+            </a>
+            <a href="publicacoes.html" class="admin-nav-item">
+                <span class="admin-nav-icon">▤</span><span>Publicações</span>
+            </a>
+            <a href="materiais.html" class="admin-nav-item active">
+                <span class="admin-nav-icon">▧</span><span>Materiais</span>
+            </a>
+            <a href="destaques.html" class="admin-nav-item">
+                <span class="admin-nav-icon">✧</span><span>Destaques</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../index.html" class="admin-nav-item">
+                <span class="admin-nav-icon">↗</span><span>Visualizar site</span>
+            </a>
+            <button type="button" id="logout-button" class="admin-nav-item logout-button">
+                <span class="admin-nav-icon">⇥</span><span>Sair do painel</span>
+            </button>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div>
+                <span class="section-index">GERENCIAMENTO DE CONTEÚDO</span>
+                <h1>Materiais e Experimentos</h1>
+            </div>
+            <div class="admin-user">
+                <div class="user-symbol">A</div>
+                <div>
+                    <strong id="admin-name">Administrador</strong>
+                    <small>Administrador</small>
+                </div>
+            </div>
+        </header>
+
+        <section class="admin-welcome">
+            <div>
+                <span class="section-index">LAEF / MATERIAIS</span>
+                <h2>Conhecimento para explorar.</h2>
+                <p>Gerencie experimentos, roteiros, simulações, materiais didáticos e recursos computacionais disponibilizados pelo laboratório.</p>
+            </div>
+        </section>
+
+        <section class="admin-statistics">
+            <article class="admin-stat-card">
+                <span>Total de materiais</span>
+                <strong id="total-materiais">0</strong>
+                <small>Registros cadastrados</small>
+            </article>
+            <article class="admin-stat-card">
+                <span>Publicados</span>
+                <strong id="materiais-publicados">0</strong>
+                <small>Visíveis no site</small>
+            </article>
+            <article class="admin-stat-card">
+                <span>Rascunhos</span>
+                <strong id="materiais-rascunhos">0</strong>
+                <small>Aguardando publicação</small>
+            </article>
+        </section>
+
+        <section class="admin-section" id="formulario-section">
+            <div class="admin-section-header">
+                <div>
+                    <span class="section-index">GERENCIAMENTO</span>
+                    <h2 id="formulario-titulo">Cadastrar material</h2>
+                    <p>Preencha os dados do material ou experimento.</p>
+                </div>
+            </div>
+
+            <form id="form-material">
+                <input type="hidden" id="material-id">
+                <input type="hidden" id="imagem-atual">
+                <input type="hidden" id="arquivo-atual">
+
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="titulo">Título do material *</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Digite o título do material" required maxlength="200">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Categoria *</label>
+                        <select id="categoria" name="categoria" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="experimento">Experimento</option>
+                            <option value="roteiro">Roteiro</option>
+                            <option value="simulacao">Simulação</option>
+                            <option value="didatico">Material didático</option>
+                            <option value="computacional">Computacional</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assunto">Assunto</label>
+                        <input type="text" id="assunto" name="assunto" placeholder="Ex.: Mecânica, Óptica, Termodinâmica">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formato">Formato</label>
+                        <input type="text" id="formato" name="formato" placeholder="Ex.: PDF, vídeo, simulador, notebook">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="simbolo">Símbolo / identificação visual</label>
+                        <input type="text" id="simbolo" name="simbolo" placeholder="Ex.: ∑, ⚛ ou 🧪">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva o material, seus objetivos e possibilidades de utilização..."></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="palavras-chave">Palavras-chave</label>
+                        <input type="text" id="palavras-chave" name="palavras_chave" placeholder="Ex.: Física, Ensino, Mecânica">
+                        <small>Separe as palavras-chave por vírgulas.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="link-externo">Link externo</label>
+                        <input type="url" id="link-externo" name="link_externo" placeholder="https://...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Situação *</label>
+                        <select id="status" name="status" required>
+                            <option value="rascunho">Rascunho</option>
+                            <option value="publicado">Publicado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="imagem">Imagem de apresentação</label>
+                        <div class="file-upload-area">
+                            <input type="file" id="imagem" name="imagem" accept="image/jpeg,image/png,image/webp">
+                            <p>Selecione uma imagem JPEG, PNG ou WebP. Tamanho máximo: 20 MB.</p>
+                        </div>
+                        <div id="imagem-atual-info" class="file-current-info" hidden>
+                            <span id="imagem-nome"></span>
+                            <button type="button" id="remover-imagem" class="button-text-danger">Remover imagem</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="arquivo">Arquivo do material</label>
+                        <div class="file-upload-area">
+                            <input type="file" id="arquivo" name="arquivo" accept=".pdf,application/pdf">
+                            <p>Selecione um PDF. Tamanho máximo: 20 MB. Outros formatos podem ser disponibilizados por link externo.</p>
+                        </div>
+                        <div id="arquivo-atual-info" class="file-current-info" hidden>
+                            <span id="arquivo-nome"></span>
+                            <button type="button" id="remover-arquivo" class="button-text-danger">Remover arquivo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="salvar-material" class="button-primary">Salvar material</button>
+                    <button type="button" id="cancelar-edicao" class="button-secondary" hidden>Cancelar edição</button>
+                </div>
+
+                <p id="mensagem-formulario" class="form-message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="admin-section">
+            <div class="admin-section-header">
+                <div>
+                    <span class="section-index">ACERVO DO LABORATÓRIO</span>
+                    <h2>Materiais cadastrados</h2>
+                    <p>Consulte, edite, publique ou exclua os registros.</p>
+                </div>
+            </div>
+
+            <div class="material-filters">
+                <div class="form-group">
+                    <label for="filtro-busca">Buscar material</label>
+                    <input type="search" id="filtro-busca" placeholder="Pesquisar por título, assunto ou palavra-chave...">
+                </div>
+                <div class="form-group">
+                    <label for="filtro-categoria">Categoria</label>
+                    <select id="filtro-categoria">
+                        <option value="">Todas as categorias</option>
+                        <option value="experimento">Experimento</option>
+                        <option value="roteiro">Roteiro</option>
+                        <option value="simulacao">Simulação</option>
+                        <option value="didatico">Material didático</option>
+                        <option value="computacional">Computacional</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filtro-status">Situação</label>
+                    <select id="filtro-status">
+                        <option value="">Todas as situações</option>
+                        <option value="publicado">Publicado</option>
+                        <option value="rascunho">Rascunho</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="admin-table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Material</th>
+                            <th>Categoria</th>
+                            <th>Assunto</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-materiais">
+                        <tr><td colspan="5">Carregando materiais...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p id="mensagem-listagem" class="form-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <footer class="admin-footer">
+            <span>© 2026 LAEF · Painel administrativo</span>
+            <a href="../index.html">Voltar ao site ↗</a>
+        </footer>
+    </main>
+</div>
+</body>
+</html>

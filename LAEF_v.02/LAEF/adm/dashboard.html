@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel Administrativo | LAEF</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body class="admin-page">
+
+    <div class="admin-layout">
+
+        <!-- MENU LATERAL -->
+
+        <aside class="admin-sidebar">
+
+            <a href="../index.html" class="admin-logo">
+                LAEF<span>.</span>
+                <small>PAINEL ADMINISTRATIVO</small>
+            </a>
+
+            <div class="sidebar-label">
+                MENU PRINCIPAL
+            </div>
+
+            <nav class="admin-nav">
+
+                <a href="dashboard.html" class="active">
+                    <span>⌂</span>
+                    Visão geral
+                </a>
+
+                <a href="equipe.html">
+                    <span>♙</span>
+                    Equipe
+                </a>
+
+                <a href="ensino.html">
+                    <span>∑</span>
+                    Ensino
+                </a>
+
+                <a href="pesquisa.html">
+                    <span>⚛</span>
+                    Pesquisa
+                </a>
+
+                <a href="extensao.html">
+                    <span>◇</span>
+                    Extensão
+                </a>
+
+                <a href="publicacoes.html">
+                    <span>▤</span>
+                    Publicações
+                </a>
+
+                <a href="materiais.html">
+                    <span>⌘</span>
+                    Materiais e experimentos
+                </a>
+
+                <a href="destaques.html">
+                    <span>✧</span>
+                    Destaques
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="../index.html">
+                    ↗ Visualizar site
+                </a>
+
+                <button id="logout-button">
+                    Sair do painel
+                    <span>↗</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+
+        <main class="admin-main">
+
+            <header class="admin-header">
+
+                <div>
+                    <span class="admin-eyebrow">
+                        LAEF / ADMINISTRAÇÃO
+                    </span>
+
+                    <h1>
+                        Visão <em>geral.</em>
+                    </h1>
+                </div>
+
+                <div class="admin-user">
+
+                    <span class="user-symbol" id="admin-initial">
+                        A
+                    </span>
+
+                    <div>
+                        <strong id="admin-name">
+                            Administrador
+                        </strong>
+
+                        <small>Administrador LAEF</small>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- BOAS-VINDAS -->
+
+            <section class="admin-welcome">
+
+                <div>
+                    <span class="section-index">
+                        PAINEL DE CONTROLE / 01
+                    </span>
+
+                    <h2>
+                        Bem-vindo ao<br>
+                        <em>LAEF.</em>
+                    </h2>
+
+                    <p>
+                        Gerencie as atividades, pesquisas,
+                        publicações e conteúdos do laboratório
+                        em um único espaço.
+                    </p>
+                </div>
+
+                <div class="welcome-symbol">
+                    F
+                </div>
+
+            </section>
+
+
+            <!-- INDICADORES -->
+
+            <section class="admin-statistics">
+
+                <div class="admin-section-heading">
+                    <div>
+                        <span class="section-index">
+                            01 / INDICADORES
+                        </span>
+
+                        <h2>Conteúdos cadastrados.</h2>
+                    </div>
+
+                    <span id="dashboard-status">
+                        Carregando dados...
+                    </span>
+                </div>
+
+
+                <div class="statistics-grid">
+
+                    <article class="stat-card">
+                        <span>01 / EQUIPE</span>
+                        <strong id="count-equipe">—</strong>
+                        <small>Integrantes cadastrados</small>
+                    </article>
+
+                    <article class="stat-card">
+                        <span>02 / ENSINO</span>
+                        <strong id="count-ensino">—</strong>
+                        <small>Conteúdos cadastrados</small>
+                    </article>
+
+                    <article class="stat-card">
+                        <span>03 / PESQUISA</span>
+                        <strong id="count-pesquisa">—</strong>
+                        <small>Projetos cadastrados</small>
+                    </article>
+
+                    <article class="stat-card">
+                        <span>04 / EXTENSÃO</span>
+                        <strong id="count-extensao">—</strong>
+                        <small>Ações cadastradas</small>
+                    </article>
+
+                    <article class="stat-card">
+                        <span>05 / PUBLICAÇÕES</span>
+                        <strong id="count-publicacoes">—</strong>
+                        <small>Produções cadastradas</small>
+                    </article>
+
+                    <article class="stat-card">
+                        <span>06 / MATERIAIS</span>
+                        <strong id="count-materiais">—</strong>
+                        <small>Recursos cadastrados</small>
+                    </article>
+
+                    <article class="stat-card">
+                        <span>07 / DESTAQUES</span>
+                        <strong id="count-destaques">—</strong>
+                        <small>Destaques cadastrados</small>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ACESSOS RÁPIDOS -->
+
+            <section class="admin-quick-access">
+
+                <span class="section-index">
+                    02 / GERENCIAMENTO
+                </span>
+
+                <h2>Acessos rápidos.</h2>
+
+                <div class="quick-grid">
+
+                    <a href="equipe.html">
+                        <span>01</span>
+                        <strong>Gerenciar equipe</strong>
+                        <small>Adicionar e editar integrantes</small>
+                        <b>↗</b>
+                    </a>
+
+                    <a href="pesquisa.html">
+                        <span>02</span>
+                        <strong>Projetos de pesquisa</strong>
+                        <small>Administrar pesquisas</small>
+                        <b>↗</b>
+                    </a>
+
+                    <a href="publicacoes.html">
+                        <span>03</span>
+                        <strong>Publicações</strong>
+                        <small>Gerenciar produção científica</small>
+                        <b>↗</b>
+                    </a>
+
+                    <a href="materiais.html">
+                        <span>04</span>
+                        <strong>Materiais e experimentos</strong>
+                        <small>Administrar recursos didáticos</small>
+                        <b>↗</b>
+                    </a>
+
+                    <a href="destaques.html">
+
+                        <span>05</span>
+
+                        <strong>Gerenciar destaques</strong>
+
+                        <small>Controlar conteúdos da página inicial</small>
+
+                        <b>↗</b>
+
+                    </a>
+                </div>
+
+            </section>
+
+
+            <footer class="admin-footer">
+
+                <span>
+                    LAEF · UFPE · CENTRO ACADÊMICO DO AGRESTE
+                </span>
+
+                <span>
+                    PAINEL ADMINISTRATIVO
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>

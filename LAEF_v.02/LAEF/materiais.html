@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Acesse materiais didáticos, experimentos e recursos de Física do LAEF.">
+
+    <title>Materiais e Experimentos | LAEF</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/conteudo.css">
+
+    <!-- JAVASCRIPT -->
+    <script src="js/main.js" defer></script>
+    <script type="module" src="js/materiais.js"></script>
+    
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="header">
+
+        <div class="container header-content">
+
+            <a href="index.html" class="brand">
+
+                <div class="brand-symbol">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="4" fill="currentColor"/>
+
+                        <ellipse cx="24" cy="24" rx="20" ry="8"
+                            stroke="currentColor" stroke-width="1.5"
+                            transform="rotate(-35 24 24)"/>
+
+                        <ellipse cx="24" cy="24" rx="20" ry="8"
+                            stroke="currentColor" stroke-width="1.5"
+                            transform="rotate(35 24 24)"/>
+
+                        <circle cx="39" cy="11" r="2.5"
+                            fill="currentColor"/>
+                    </svg>
+                </div>
+
+                <div class="brand-text">
+                    <strong>LAEF</strong>
+                    <span>Laboratório de Atividades e Estudos em Física</span>
+                </div>
+
+            </a>
+
+            <button class="menu-toggle"
+                aria-label="Abrir menu"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+
+            </button>
+
+            <nav class="navigation">
+
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="ensino.html">Ensino</a>
+                <a href="pesquisa.html">Pesquisa</a>
+                <a href="extensao.html">Extensão</a>
+                <a href="equipe.html">Equipe</a>
+                <a href="publicacoes.html">Publicações</a>
+                <a href="materiais.html" class="active">Materiais e Experimentos</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="content-hero">
+
+            <div class="content-hero-grid"></div>
+
+            <div class="container content-hero-content">
+
+                <span class="eyebrow">
+                    LAEF · RECURSOS EDUCACIONAIS
+                </span>
+
+                <h1>
+                    Materiais e
+                    <span>Experimentos.</span>
+                </h1>
+
+                <p>
+                    Um espaço para explorar, compartilhar e acessar
+                    recursos que aproximam a Física da experimentação,
+                    da aprendizagem e da prática científica.
+                </p>
+
+            </div>
+
+            <div class="content-hero-footer">
+                <span>EXPERIMENTOS · SIMULAÇÕES · RECURSOS DIDÁTICOS</span>
+                <span>UFPE · CAA</span>
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUÇÃO -->
+
+        <section class="materials-intro section-padding">
+
+            <div class="container materials-intro-grid">
+
+                <div>
+                    <span class="section-index">01 / BIBLIOTECA DE RECURSOS</span>
+
+                    <h2>
+                        A Física também se
+                        <em>aprende fazendo.</em>
+                    </h2>
+                </div>
+
+                <div>
+                    <p>
+                        A experimentação permite observar fenômenos,
+                        testar ideias e relacionar conceitos teóricos
+                        com situações práticas.
+                    </p>
+
+                    <p>
+                        Nesta biblioteca serão disponibilizados
+                        materiais de apoio, atividades experimentais,
+                        simulações e recursos computacionais
+                        relacionados ao ensino e ao estudo da Física.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BIBLIOTECA -->
+
+        <section class="materials-library section-padding">
+
+            <div class="container">
+
+                <div class="materials-heading">
+
+                    <div>
+                        <span class="section-index">
+                            02 / ACERVO DE MATERIAIS
+                        </span>
+
+                        <h2>
+                            Explore os recursos.
+                        </h2>
+                    </div>
+
+                    <span class="materials-label">
+                        BIBLIOTECA LAEF
+                    </span>
+
+                </div>
+
+
+                <!-- PESQUISA -->
+
+                <div class="materials-controls">
+
+                    <div class="materials-search">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="search"
+                            id="material-search"
+                            placeholder="Pesquisar material, assunto ou palavra-chave..."
+                            aria-label="Pesquisar materiais">
+
+                    </div>
+
+                </div>
+
+
+                <!-- FILTROS -->
+
+                <div class="materials-filters">
+
+                    <button class="material-filter active"
+                        data-filter="todos">
+                        Todos
+                    </button>
+
+                    <button class="material-filter"
+                        data-filter="experimento">
+                        Experimentos
+                    </button>
+
+                    <button class="material-filter"
+                        data-filter="roteiro">
+                        Roteiros
+                    </button>
+
+                    <button class="material-filter"
+                        data-filter="simulacao">
+                        Simulações
+                    </button>
+
+                    <button class="material-filter"
+                        data-filter="didatico">
+                        Materiais didáticos
+                    </button>
+
+                    <button class="material-filter"
+                        data-filter="computacional">
+                        Computacionais
+                    </button>
+
+                </div>
+
+
+                <!-- LISTAGEM -->
+
+                <div class="materials-grid" id="materials-grid">
+
+                    <div class="materials-empty">
+
+                        <span>∅</span>
+
+                        <h3>Biblioteca em organização</h3>
+
+                        <p>
+                            Os materiais e experimentos do LAEF
+                            serão disponibilizados neste espaço.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="materials-count"
+                    id="materials-count">
+
+                    Nenhum material cadastrado.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTRIBUIÇÃO -->
+
+        <section class="materials-contribution section-padding">
+
+            <div class="container contribution-content">
+
+                <div>
+
+                    <span class="section-index">
+                        03 / COMPARTILHAMENTO
+                    </span>
+
+                    <h2>
+                        Conhecimento também
+                        se constrói ao compartilhar.
+                    </h2>
+
+                    <p>
+                        Materiais, experimentos e recursos educativos
+                        podem contribuir para ampliar as possibilidades
+                        de aprendizagem e divulgação da Física.
+                    </p>
+
+                </div>
+
+                <div class="contribution-symbol">
+                    ∑
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ENCERRAMENTO -->
+
+        <section class="materials-closing">
+
+            <div class="container">
+
+                <span class="section-index">
+                    LAEF · FÍSICA EM MOVIMENTO
+                </span>
+
+                <h2>
+                    Observar, experimentar
+                    e compreender o mundo.
+                </h2>
+
+                <a href="ensino.html" class="button-primary">
+                    Conheça nossa área de Ensino
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+<!-- RODAPÉ -->
+    <footer class="footer">
+
+    <div class="container footer-content">
+
+        <div class="footer-brand">
+
+            <strong>LAEF<span>.</span></strong>
+
+            <p>
+                Laboratório de Atividades e Estudos em Física
+                <br>
+                UFPE · Centro Acadêmico do Agreste
+            </p>
+
+        </div>
+
+        <!-- ACESSO ADMINISTRATIVO -->
+        <a href="adm/login.html" class="admin-access">
+
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="13"
+        height="13"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <rect x="4" y="10" width="16" height="11" rx="2"/>
+        <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+
+    </svg>
+
+    <span>Acesso administrativo</span>
+
+</a>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 LAEF. Todos os direitos reservados.
+            </span>
+
+            <span>
+                Caruaru · Pernambuco · Brasil
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+</body>
+</html>

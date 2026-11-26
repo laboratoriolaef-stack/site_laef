@@ -1,0 +1,1243 @@
+
+/* ==========================================
+   LAEF — PÁGINAS DE CONTEÚDO
+   Equipe · Publicações · Materiais
+========================================== */
+
+
+/* ==========================================
+   APRESENTAÇÃO
+========================================== */
+
+.content-hero {
+    min-height: 440px;
+    background: var(--navy);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.content-hero-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+
+    background-size: 65px 65px;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 35%,
+        black
+    );
+}
+
+.content-hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+
+.content-hero-content h1 {
+    font-family: var(--font-editorial);
+    font-size: clamp(60px, 8vw, 95px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 25px 0;
+}
+
+.content-hero-content h1 span {
+    color: #91b3d2;
+    font-style: italic;
+}
+
+.content-hero-content p {
+    max-width: 550px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #b9c5d2;
+}
+
+.content-hero-footer {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    min-height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255,255,255,.13);
+
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #8295aa;
+}
+
+
+/* ==========================================
+   INTRODUÇÃO DA EQUIPE
+========================================== */
+
+.team-intro {
+    background: #DCE4EB;
+}
+
+.team-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.team-intro h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(38px, 4.5vw, 55px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 22px;
+}
+
+.team-intro h2 em {
+    color: var(--blue);
+}
+
+.team-intro-grid > div:last-child p {
+    font-size: 14px;
+    color: #536477;
+    line-height: 2;
+}
+
+
+/* ==========================================
+   CATEGORIAS DA EQUIPE
+========================================== */
+
+.team-category {
+    background: #DCE4EB;
+}
+
+.team-category-dark {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.team-category-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.team-category-heading h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(32px, 4vw, 45px);
+    font-weight: 400;
+    margin-top: 18px;
+}
+
+.team-category-heading .section-index {
+    color: var(--blue);
+}
+
+.team-category-dark .team-category-heading .section-index {
+    color: #A9C4DD;
+}
+
+.team-category-number {
+    font-family: var(--font-editorial);
+    font-size: 90px;
+    color: rgba(16,31,53,.12);
+}
+
+.team-category-dark .team-category-number {
+    color: rgba(255,255,255,.12);
+}
+
+
+/* ==========================================
+   GRADE DOS INTEGRANTES
+========================================== */
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.team-empty {
+    grid-column: 1 / -1;
+    min-height: 150px;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 30px;
+
+    border: 1px dashed rgba(16,31,53,.25);
+    color: #536477;
+}
+
+.team-empty > span {
+    font-family: var(--font-editorial);
+    font-size: 35px;
+    color: var(--blue);
+}
+
+.team-empty p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.team-category-dark .team-empty {
+    border-color: rgba(255,255,255,.2);
+    color: #B9C5D2;
+}
+
+.team-category-dark .team-empty > span {
+    color: #A9C4DD;
+}
+
+
+/* ==========================================
+   CARTÕES DOS INTEGRANTES
+========================================== */
+
+.team-card {
+    background: #ffffff;
+    overflow: hidden;
+    transition: .3s;
+    border: 1px solid rgba(16,31,53,.08);
+}
+
+.team-category-dark .team-card {
+    background: var(--navy-light);
+    border-color: rgba(255,255,255,.12);
+    color: var(--white);
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #C5D2DE;
+    overflow: hidden;
+}
+
+.team-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s;
+}
+
+.team-card:hover .team-card-image img {
+    transform: scale(1.04);
+}
+
+.team-card-info {
+    padding: 25px;
+}
+
+.team-card-info > span {
+    font-size: 9px;
+    color: var(--blue);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.team-category-dark .team-card-info > span {
+    color: #A9C4DD;
+}
+
+.team-card-info h3 {
+    font-family: var(--font-editorial);
+    font-size: 23px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.team-card-info p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #65707c;
+}
+
+.team-category-dark .team-card-info p {
+    color: #B9C5D2;
+}
+
+.team-card-link {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 11px;
+    font-weight: 700;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 4px;
+}
+
+
+/* ==========================================
+   ENCERRAMENTO DA EQUIPE
+========================================== */
+
+.team-closing {
+    background: #DCE4EB;
+    padding: 100px 0;
+}
+
+.team-closing .section-index {
+    color: var(--blue);
+}
+
+.team-closing h2 {
+    max-width: 750px;
+    font-family: var(--font-editorial);
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 25px 0 35px;
+}
+
+.team-closing .button-primary {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.team-closing .button-primary:hover {
+    background: var(--navy-light);
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE DA EQUIPE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .team-intro-grid {
+        gap: 50px;
+    }
+
+    .team-members {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 760px) {
+
+    .content-hero {
+        min-height: 420px;
+    }
+
+    .content-hero-content {
+        padding-top: 75px;
+        padding-bottom: 85px;
+    }
+
+    .content-hero-content h1 {
+        font-size: 60px;
+    }
+
+    .content-hero-footer {
+        font-size: 7px;
+        letter-spacing: .5px;
+        gap: 10px;
+    }
+
+    .team-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .team-members {
+        grid-template-columns: 1fr;
+    }
+
+    .team-category-heading h2 {
+        font-size: 32px;
+    }
+
+    .team-category-number {
+        font-size: 60px;
+    }
+
+    .team-closing {
+        padding: 75px 0;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .content-hero-content h1 {
+        font-size: 52px;
+    }
+
+    .team-empty {
+        padding: 20px;
+        gap: 15px;
+    }
+
+}
+
+
+/* ==========================================
+   LAEF — PÁGINA PUBLICAÇÕES
+========================================== */
+
+.publications-intro {
+    background: #DCE4EB;
+}
+
+.publications-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.publications-intro h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(38px, 4.5vw, 55px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 22px;
+}
+
+.publications-intro h2 em {
+    color: var(--blue);
+}
+
+.publications-intro-grid > div:last-child p {
+    font-size: 14px;
+    line-height: 2;
+    color: #536477;
+    margin-bottom: 18px;
+}
+
+
+/* ACERVO */
+
+.publications-library {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.library-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.library-heading .section-index {
+    color: #A9C4DD;
+}
+
+.library-heading h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(35px, 4vw, 48px);
+    font-weight: 400;
+    margin-top: 18px;
+}
+
+.library-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #A9C4DD;
+}
+
+
+/* BUSCA E FILTROS */
+
+.publication-controls {
+    display: grid;
+    grid-template-columns: 1fr 190px;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.publication-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--navy-light);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 0 17px;
+}
+
+.publication-search > span {
+    font-size: 25px;
+    color: #A9C4DD;
+}
+
+.publication-search input {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font: inherit;
+    font-size: 12px;
+}
+
+.publication-search input::placeholder {
+    color: #A9B6C5;
+}
+
+.publication-search input:focus-visible {
+    outline: none;
+}
+
+.publication-controls select {
+    min-width: 0;
+    padding: 12px;
+    background: var(--navy-light);
+    color: white;
+    border: 1px solid rgba(255,255,255,.15);
+    font: inherit;
+    font-size: 12px;
+}
+
+.publication-controls select option {
+    background: var(--navy);
+    color: white;
+}
+
+.publication-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.filter-button {
+    padding: 10px 17px;
+    background: transparent;
+    color: #B9C5D2;
+    border: 1px solid rgba(255,255,255,.2);
+    cursor: pointer;
+    font-size: 11px;
+    transition: .3s;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    background: #A9C4DD;
+    color: var(--navy);
+    border-color: #A9C4DD;
+}
+
+
+/* LISTAGEM */
+
+.publication-list {
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.publication-card {
+    display: grid;
+    grid-template-columns: 75px 1fr auto;
+    align-items: center;
+    gap: 25px;
+    padding: 28px 10px;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    transition: .3s;
+}
+
+.publication-card:hover {
+    background: rgba(255,255,255,.04);
+}
+
+.publication-year {
+    font-family: var(--font-editorial);
+    font-size: 25px;
+    color: #A9C4DD;
+}
+
+.publication-type {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #A9C4DD;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.publication-card h3 {
+    font-family: var(--font-editorial);
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.publication-authors {
+    font-size: 11px;
+    color: #B9C5D2;
+    margin-top: 8px;
+}
+
+.publication-link {
+    display: inline-block;
+    padding: 11px 15px;
+    border: 1px solid rgba(255,255,255,.35);
+    color: white;
+    font-size: 11px;
+    white-space: nowrap;
+    transition: .3s;
+}
+
+.publication-link:hover {
+    background: white;
+    color: var(--navy);
+}
+
+.publication-empty {
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.publication-empty > span {
+    font-family: var(--font-editorial);
+    font-size: 55px;
+    color: #A9C4DD;
+}
+
+.publication-empty h3 {
+    font-family: var(--font-editorial);
+    font-size: 27px;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.publication-empty p {
+    font-size: 12px;
+    color: #B9C5D2;
+    line-height: 1.8;
+}
+
+.publication-count {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 10px;
+    color: #A9B6C5;
+}
+
+
+/* ENCERRAMENTO DAS PUBLICAÇÕES */
+
+.publication-closing {
+    background: #DCE4EB;
+    padding: 100px 0;
+}
+
+.publication-closing .section-index {
+    color: var(--blue);
+}
+
+.publication-closing h2 {
+    max-width: 750px;
+    font-family: var(--font-editorial);
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 25px 0 35px;
+}
+
+.publication-closing .button-primary {
+    background: var(--navy);
+    color: white;
+}
+
+
+/* RESPONSIVIDADE DAS PUBLICAÇÕES */
+
+@media (max-width: 760px) {
+
+    .publications-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .library-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .publication-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .publication-card {
+        grid-template-columns: 50px 1fr;
+        gap: 15px;
+    }
+
+    .publication-card .publication-link {
+        grid-column: 2;
+        justify-self: start;
+    }
+
+    .publication-year {
+        font-size: 21px;
+    }
+
+    .publication-card h3 {
+        font-size: 19px;
+    }
+
+    .publication-closing {
+        padding: 75px 0;
+    }
+
+}
+
+
+/* ==========================================
+   LAEF — PÁGINA MATERIAIS E EXPERIMENTOS
+========================================== */
+
+
+/* INTRODUÇÃO */
+
+.materials-intro {
+    background: #DCE4EB;
+}
+
+.materials-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.materials-intro h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(38px, 4.5vw, 55px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 22px;
+}
+
+.materials-intro h2 em {
+    color: var(--blue);
+}
+
+.materials-intro-grid > div:last-child p {
+    font-size: 14px;
+    color: #536477;
+    line-height: 2;
+    margin-bottom: 18px;
+}
+
+
+/* BIBLIOTECA */
+
+.materials-library {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.materials-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.materials-heading .section-index {
+    color: #A9C4DD;
+}
+
+.materials-heading h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(35px, 4vw, 48px);
+    font-weight: 400;
+    margin-top: 18px;
+}
+
+.materials-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #A9C4DD;
+}
+
+
+/* PESQUISA */
+
+.materials-controls {
+    margin-bottom: 25px;
+}
+
+.materials-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--navy-light);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 0 17px;
+}
+
+.materials-search > span {
+    font-size: 25px;
+    color: #A9C4DD;
+}
+
+.materials-search input {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font: inherit;
+    font-size: 12px;
+}
+
+.materials-search input::placeholder {
+    color: #A9B6C5;
+}
+
+.materials-search input:focus-visible {
+    outline: none;
+}
+
+
+/* FILTROS */
+
+.materials-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.material-filter {
+    padding: 10px 17px;
+    background: transparent;
+    color: #B9C5D2;
+    border: 1px solid rgba(255,255,255,.2);
+    cursor: pointer;
+    font-size: 11px;
+    transition: .3s;
+}
+
+.material-filter:hover,
+.material-filter.active {
+    background: #A9C4DD;
+    color: var(--navy);
+    border-color: #A9C4DD;
+}
+
+
+/* CARTÕES DOS MATERIAIS */
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.material-card {
+    background: var(--navy-light);
+    border: 1px solid rgba(255,255,255,.12);
+    overflow: hidden;
+    transition: .3s;
+}
+
+.material-card:hover {
+    transform: translateY(-5px);
+    border-color: #91B3D2;
+}
+
+.material-card-image {
+    height: 175px;
+    display: grid;
+    place-items: center;
+    background: #243D5A;
+    position: relative;
+}
+
+.material-card-image span {
+    font-family: var(--font-editorial);
+    font-size: 65px;
+    color: #A9C4DD;
+}
+
+.material-card-info {
+    padding: 25px;
+}
+
+.material-card-type {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #A9C4DD;
+    text-transform: uppercase;
+}
+
+.material-card-info h3 {
+    font-family: var(--font-editorial);
+    font-size: 22px;
+    font-weight: 400;
+    margin: 12px 0;
+}
+
+.material-card-info p {
+    font-size: 12px;
+    color: #B9C5D2;
+    line-height: 1.8;
+}
+
+.material-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 10px;
+    color: #A9C4DD;
+}
+
+.material-card-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #A9C4DD;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.material-card-link:hover {
+    color: #A9C4DD;
+}
+
+
+/* ESTADO VAZIO */
+
+.materials-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.materials-empty > span {
+    font-family: var(--font-editorial);
+    font-size: 55px;
+    color: #A9C4DD;
+}
+
+.materials-empty h3 {
+    font-family: var(--font-editorial);
+    font-size: 27px;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.materials-empty p {
+    font-size: 12px;
+    color: #B9C5D2;
+    line-height: 1.8;
+}
+
+.materials-count {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 10px;
+    color: #A9B6C5;
+}
+
+
+/* CONTRIBUIÇÃO */
+
+.materials-contribution {
+    background: #192D49;
+    color: white;
+}
+
+.contribution-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.contribution-content .section-index {
+    color: #A9C4DD;
+}
+
+.contribution-content h2 {
+    max-width: 650px;
+    font-family: var(--font-editorial);
+    font-size: clamp(38px, 4.5vw, 55px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 22px 0;
+}
+
+.contribution-content p {
+    max-width: 550px;
+    font-size: 13px;
+    color: #B9C5D2;
+    line-height: 1.9;
+}
+
+.contribution-symbol {
+    font-family: var(--font-editorial);
+    font-size: 180px;
+    color: rgba(255,255,255,.09);
+}
+
+
+/* ENCERRAMENTO */
+
+.materials-closing {
+    background: #DCE4EB;
+    padding: 100px 0;
+}
+
+.materials-closing .section-index {
+    color: var(--blue);
+}
+
+.materials-closing h2 {
+    max-width: 750px;
+    font-family: var(--font-editorial);
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 25px 0 35px;
+}
+
+.materials-closing .button-primary {
+    background: var(--navy);
+    color: white;
+}
+
+
+/* RESPONSIVIDADE DOS MATERIAIS */
+
+@media (max-width: 900px) {
+
+    .materials-intro-grid {
+        gap: 50px;
+    }
+
+}
+
+@media (max-width: 760px) {
+
+    .materials-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .materials-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contribution-content {
+        align-items: flex-start;
+    }
+
+    .contribution-symbol {
+        display: none;
+    }
+
+    .materials-closing {
+        padding: 75px 0;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .material-card-info {
+        padding: 20px;
+    }
+
+}
+
+/* ==========================================
+   EQUIPE — INTEGRAÇÃO COM SUPABASE
+========================================== */
+
+.team-card-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #192D49;
+    color: #A9C4DD;
+
+    font-family: var(--font-editorial);
+    font-size: 65px;
+    font-style: italic;
+}
+
+.team-card-info .team-function {
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.team-card-info .team-description {
+    margin-top: 10px;
+}
+
+.team-card-link {
+    color: inherit;
+}
+
+.team-card-link:hover {
+    color: #537DA5;
+}
+
+.team-loading,
+.team-error {
+    grid-column: 1 / -1;
+    padding: 30px;
+    font-size: 13px;
+    color: #536477;
+    border: 1px dashed rgba(16, 31, 53, .25);
+}
+
+.team-category-dark .team-loading,
+.team-category-dark .team-error {
+    color: #B9C5D2;
+    border-color: rgba(255,255,255,.2);
+}
+
+
+/* ==========================================
+   LAEF — AJUSTES DA BIBLIOTECA DE MATERIAIS
+========================================== */
+
+/* Imagens dos materiais */
+
+.material-card-image {
+    width: 100%;
+    height: 175px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: #243D5A;
+}
+
+.material-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s;
+}
+
+.material-card:hover .material-card-image img {
+    transform: scale(1.04);
+}
+
+/* Links de acesso */
+
+.material-card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.material-card-link {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 16px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #A9C4DD;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color .3s;
+}
+
+.material-card-link:hover {
+    color: #A9C4DD;
+}
+
+/* Estado de carregamento e ausência de resultados */
+
+.materials-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.materials-empty h3 {
+    font-family: var(--font-editorial);
+    font-size: 27px;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.materials-empty p {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #B9C5D2;
+    line-height: 1.8;
+}
+
+/* Estado de erro */
+
+.materials-empty.erro {
+    border: 1px dashed rgba(255, 180, 180, .35);
+}
+
+.materials-empty.erro > span {
+    color: #E5A0A0;
+}
+
+/* Responsividade */
+
+@media (max-width: 760px) {
+
+    .material-card-image {
+        height: 200px;
+    }
+
+    .material-card-info {
+        padding: 22px;
+    }
+
+    .material-card-link {
+        font-size: 12px;
+    }
+
+}
+

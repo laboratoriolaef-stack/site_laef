@@ -1,0 +1,1242 @@
+
+/* ==========================================
+   LAEF — PAINEL ADMINISTRATIVO
+========================================== */
+
+:root {
+    --navy: #101F35;
+    --navy-light: #192D49;
+    --blue: #315477;
+    --blue-light: #A9C4DD;
+    --background: #DCE4EB;
+    --white: #FFFFFF;
+    --muted: #8295AA;
+
+    --font-editorial: Georgia, serif;
+    --font-main: Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+}
+
+/* LOGIN */
+
+.login-page {
+    min-height: 100vh;
+    background: var(--background);
+}
+
+.login-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* LADO INSTITUCIONAL */
+
+.login-brand {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 65px;
+
+    background: var(--navy);
+    color: var(--white);
+}
+
+.login-logo {
+    font-family: var(--font-editorial);
+    font-size: 48px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.login-logo span {
+    color: var(--blue-light);
+}
+
+.login-brand > p {
+    max-width: 250px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 2;
+    color: var(--blue-light);
+}
+
+.login-brand small {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+}
+
+/* ELEMENTO CIENTÍFICO */
+
+.login-decoration {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    place-items: center;
+}
+
+.login-decoration span {
+    font-family: var(--font-editorial);
+    font-size: 75px;
+    font-style: italic;
+    color: var(--blue-light);
+}
+
+.orbit {
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    border: 1px solid rgba(169,196,221,.4);
+    border-radius: 50%;
+}
+
+.orbit-one {
+    transform: rotate(45deg);
+}
+
+.orbit-two {
+    transform: rotate(-45deg);
+}
+
+/* FORMULÁRIO */
+
+.login-form-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.login-form-content {
+    width: 100%;
+    max-width: 430px;
+}
+
+.login-index {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--blue);
+}
+
+.login-form-content h1 {
+    font-family: var(--font-editorial);
+    font-size: clamp(38px, 4vw, 55px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--navy);
+    margin: 25px 0 15px;
+}
+
+.login-form-content h1 em {
+    color: var(--blue);
+}
+
+.login-description {
+    color: #536477;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* CAMPOS */
+
+.login-form-content label {
+    display: block;
+    margin: 20px 0 9px;
+
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.login-form-content input {
+    width: 100%;
+    padding: 15px;
+
+    background: transparent;
+    border: 1px solid #B8C6D2;
+
+    font-family: inherit;
+    font-size: 12px;
+
+    outline: none;
+    transition: .3s;
+}
+
+.login-form-content input:focus {
+    border-color: var(--blue);
+    background: rgba(255,255,255,.5);
+}
+
+/* BOTÃO */
+
+#login-button {
+    width: 100%;
+    margin-top: 30px;
+    padding: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--navy);
+    border: none;
+    color: white;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+#login-button:hover {
+    background: var(--blue);
+}
+
+#login-button:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+/* MENSAGEM */
+
+#login-message {
+    min-height: 20px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #A13C3C;
+}
+
+/* RETORNO */
+
+.back-site {
+    display: inline-block;
+    margin-top: 25px;
+
+    color: var(--blue);
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.back-site:hover {
+    color: var(--navy);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+
+    .login-brand {
+        min-height: 220px;
+        padding: 30px;
+    }
+
+    .login-brand > p {
+        margin-top: 25px;
+    }
+
+    .login-decoration {
+        width: 150px;
+        height: 150px;
+        left: 75%;
+    }
+
+    .login-decoration span {
+        font-size: 45px;
+    }
+
+    .login-form-area {
+        padding: 45px 25px;
+    }
+
+}
+
+
+/* ==========================================
+   LAEF — DASHBOARD ADMINISTRATIVO
+========================================== */
+
+.admin-page {
+    background: #DCE4EB;
+    color: #101F35;
+}
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* MENU LATERAL */
+
+.admin-sidebar {
+    width: 265px;
+    min-width: 265px;
+    background: #101F35;
+    color: white;
+
+    padding: 35px 25px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-logo {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 55px;
+}
+
+.admin-logo > span {
+    color: #A9C4DD;
+}
+
+.admin-logo small {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #8295AA;
+    margin-top: 8px;
+}
+
+.sidebar-label,
+.section-index {
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    color: #829FC0;
+}
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 20px;
+}
+
+.admin-nav a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 13px 12px;
+
+    color: #B9C5D2;
+    text-decoration: none;
+    font-size: 12px;
+
+    transition: .3s;
+}
+
+.admin-nav a span {
+    width: 20px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.admin-nav a:hover,
+.admin-nav a.active {
+    background: #243D5A;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-bottom a,
+.sidebar-bottom button {
+    background: none;
+    border: none;
+    color: #A9C4DD;
+    text-decoration: none;
+    text-align: left;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* CONTEÚDO */
+
+.admin-main {
+    flex: 1;
+    min-width: 0;
+    padding: 45px 6%;
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #B8C6D2;
+}
+
+.admin-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #536F8C;
+}
+
+.admin-header h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 4vw, 48px);
+    font-weight: 400;
+    margin: 15px 0 0;
+}
+
+.admin-header h1 em {
+    color: #587FA5;
+}
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-symbol {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    background: #101F35;
+    color: white;
+    border-radius: 50%;
+    font-family: Georgia, serif;
+}
+
+.admin-user strong,
+.admin-user small {
+    display: block;
+}
+
+.admin-user strong {
+    font-size: 11px;
+}
+
+.admin-user small {
+    font-size: 9px;
+    color: #65778A;
+    margin-top: 5px;
+}
+
+/* BOAS-VINDAS */
+
+.admin-welcome {
+    position: relative;
+    overflow: hidden;
+
+    margin-top: 35px;
+    padding: 45px;
+
+    background: #101F35;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-welcome h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.admin-welcome h2 em {
+    color: #A9C4DD;
+}
+
+.admin-welcome p {
+    max-width: 430px;
+    color: #B9C5D2;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.welcome-symbol {
+    font-family: Georgia, serif;
+    font-size: 170px;
+    font-style: italic;
+    color: rgba(169,196,221,.15);
+}
+
+/* INDICADORES */
+
+.admin-statistics,
+.admin-quick-access {
+    margin-top: 55px;
+}
+
+.admin-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.admin-section-heading h2,
+.admin-quick-access h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin: 13px 0 0;
+}
+
+#dashboard-status {
+    font-size: 10px;
+    color: #536F8C;
+}
+
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.stat-card {
+    padding: 25px;
+    background: #EDF1F4;
+    border: 1px solid #CFD8E0;
+}
+
+.stat-card > span {
+    font-size: 9px;
+    letter-spacing: 1.3px;
+    color: #587FA5;
+}
+
+.stat-card strong {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin: 20px 0 8px;
+}
+
+.stat-card small {
+    font-size: 10px;
+    color: #65778A;
+}
+
+/* ACESSOS RÁPIDOS */
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.quick-grid a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 25px;
+
+    background: #EDF1F4;
+    border: 1px solid #CFD8E0;
+
+    text-decoration: none;
+    color: #101F35;
+
+    transition: .3s;
+}
+
+.quick-grid a:hover {
+    background: white;
+    border-color: #587FA5;
+    transform: translateY(-3px);
+}
+
+.quick-grid a > span {
+    font-size: 9px;
+    color: #587FA5;
+}
+
+.quick-grid a strong {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.quick-grid a small {
+    font-size: 10px;
+    color: #65778A;
+}
+
+.quick-grid a b {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+}
+
+/* RODAPÉ */
+
+.admin-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-top: 65px;
+    padding-top: 20px;
+
+    border-top: 1px solid #B8C6D2;
+
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #71859A;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1000px) {
+
+    .admin-sidebar {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .admin-main {
+        padding: 35px 4%;
+    }
+
+    .statistics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .admin-layout {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        min-width: 0;
+        padding: 20px;
+    }
+
+    .admin-logo {
+        margin-bottom: 25px;
+    }
+
+    .admin-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar-bottom {
+        margin-top: 20px;
+    }
+
+    .admin-main {
+        padding: 30px 20px;
+    }
+
+    .admin-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-welcome {
+        padding: 30px;
+    }
+
+    .welcome-symbol {
+        display: none;
+    }
+
+    .statistics-grid,
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-footer {
+        flex-direction: column;
+    }
+
+}
+
+
+/* ==========================================
+   LAEF — GERENCIAMENTO DA EQUIPE
+========================================== */
+
+
+/* INTRODUÇÃO */
+
+.module-intro {
+    margin-top: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid #B8C6D2;
+}
+
+.module-intro h2 {
+    max-width: 650px;
+    font-family: var(--font-editorial);
+    font-size: clamp(35px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 18px 0;
+}
+
+.module-intro h2 em {
+    color: var(--blue);
+}
+
+.module-intro p {
+    max-width: 550px;
+    color: #536477;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+/* INDICADORES */
+
+.module-statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+
+/* CABEÇALHOS DOS MÓDULOS */
+
+.module-form-section,
+.module-list-section {
+    margin-top: 60px;
+}
+
+.module-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.module-heading h2 {
+    font-family: var(--font-editorial);
+    font-size: 32px;
+    font-weight: 400;
+    margin: 13px 0 0;
+    color: var(--navy);
+}
+
+#list-status {
+    color: #536F8C;
+    font-size: 10px;
+}
+
+
+/* FORMULÁRIO */
+
+#equipe-form {
+    background: #EDF1F4;
+    border: 1px solid #CFD8E0;
+    padding: 35px;
+}
+
+.form-group {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #CFD8E0;
+}
+
+.form-group:last-of-type {
+    margin-bottom: 0;
+}
+
+.form-group h3 {
+    font-family: var(--font-editorial);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--navy);
+    margin: 0 0 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.form-field-full {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 9px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 14px;
+    border: 1px solid #B8C6D2;
+    border-radius: 0;
+    background: #F8FAFB;
+    color: var(--navy);
+    font-family: var(--font-main);
+    font-size: 12px;
+    outline: none;
+    transition: .3s;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--blue);
+    background: white;
+}
+
+.form-field textarea {
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: #8295AA;
+}
+
+.form-field small {
+    margin-top: 9px;
+    color: #71859A;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+/* CAMPO DE FOTOGRAFIA */
+
+.form-field input[type="file"] {
+    padding: 12px;
+    background: white;
+    cursor: pointer;
+}
+
+.photo-preview {
+    min-height: 150px;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px dashed #A9B8C7;
+    background: #F8FAFB;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.photo-preview span {
+    color: #8295AA;
+    font-size: 11px;
+    text-align: center;
+}
+
+.photo-preview img {
+    display: block;
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+}
+
+
+/* BOTÕES DO FORMULÁRIO */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.button-primary,
+.button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 14px 20px;
+    font-family: var(--font-main);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button-primary {
+    background: var(--navy);
+    color: white;
+    border: 1px solid var(--navy);
+}
+
+.button-primary:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+.button-secondary {
+    background: transparent;
+    color: var(--navy);
+    border: 1px solid #AAB9C7;
+}
+
+.button-secondary:hover {
+    background: #DCE4EB;
+    border-color: var(--blue);
+}
+
+.button-primary:disabled,
+.button-secondary:disabled {
+    opacity: .55;
+    cursor: wait;
+}
+
+
+/* MENSAGENS */
+
+.form-message {
+    min-height: 18px;
+    margin: 15px 0 0;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.form-message.success {
+    color: #26744E;
+}
+
+.form-message.error {
+    color: #A13C3C;
+}
+
+
+/* CONTROLES DA LISTAGEM */
+
+.list-controls {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.list-controls input,
+.list-controls select {
+    width: 100%;
+    min-width: 0;
+    padding: 13px;
+    border: 1px solid #B8C6D2;
+    background: #EDF1F4;
+    color: var(--navy);
+    font-family: var(--font-main);
+    font-size: 11px;
+    outline: none;
+}
+
+.list-controls input:focus,
+.list-controls select:focus {
+    border-color: var(--blue);
+    background: white;
+}
+
+
+/* TABELA */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #CFD8E0;
+    background: #EDF1F4;
+}
+
+.admin-table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th {
+    padding: 17px 15px;
+    background: var(--navy);
+    color: white;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.admin-table td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #CFD8E0;
+    color: #536477;
+    font-size: 11px;
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-table tbody tr:hover {
+    background: white;
+}
+
+.admin-table td:first-child {
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.admin-table td[colspan] {
+    padding: 35px;
+    text-align: center;
+    color: #71859A;
+}
+
+
+/* STATUS DOS INTEGRANTES */
+
+.status-label {
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 9px;
+    letter-spacing: .5px;
+}
+
+.status-publicado {
+    background: #DCEDE4;
+    color: #26744E;
+}
+
+.status-rascunho {
+    background: #E8E5DB;
+    color: #79683C;
+}
+
+
+/* AÇÕES DA TABELA */
+
+.table-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.table-actions button {
+    padding: 7px 10px;
+    border: 1px solid #CFD8E0;
+    background: transparent;
+    color: var(--navy);
+    font-size: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.table-actions button:hover {
+    background: var(--navy);
+    color: white;
+}
+
+.table-actions .delete-button:hover {
+    background: #A13C3C;
+    border-color: #A13C3C;
+}
+
+
+/* CONTAGEM DA LISTAGEM */
+
+.list-count {
+    margin-top: 15px;
+    text-align: right;
+    color: #71859A;
+    font-size: 10px;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1000px) {
+
+    .module-statistics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .module-intro {
+        padding: 30px 0;
+    }
+
+    .module-statistics {
+        grid-template-columns: 1fr;
+    }
+
+    .module-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #equipe-form {
+        padding: 22px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .form-field-full {
+        grid-column: auto;
+    }
+
+    .list-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+    .module-form-section,
+    .module-list-section {
+        margin-top: 45px;
+    }
+
+}
+
+
+/* ==========================================
+   LAEF — GERENCIAMENTO DE ENSINO
+========================================== */
+
+.file-remove-option {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 15px;
+    color: #536477;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.file-remove-option input {
+    width: auto;
+    accent-color: var(--navy);
+}
+
+.current-file {
+    margin-top: 15px;
+    padding: 14px;
+    background: #DCE4EB;
+    color: #536477;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.current-file a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+#imagem-preview {
+    max-width: 100%;
+    max-height: 240px;
+    object-fit: contain;
+}
+
+#imagem-preview-area img[hidden] {
+    display: none;
+}
+
+#imagem-preview-area img:not([hidden]) {
+    display: block;
+}
+
+#ensino-form .form-group {
+    position: relative;
+}
+
+#ensino-form .form-field input[type="file"] {
+    cursor: pointer;
+}
+
+#ensino-form .form-field input[type="file"]::file-selector-button {
+    padding: 9px 13px;
+    margin-right: 12px;
+    border: 1px solid #B8C6D2;
+    background: #DCE4EB;
+    color: var(--navy);
+    cursor: pointer;
+    font-size: 11px;
+}
+
+@media (max-width: 700px) {
+
+    .current-file {
+        line-height: 1.7;
+    }
+
+}
+

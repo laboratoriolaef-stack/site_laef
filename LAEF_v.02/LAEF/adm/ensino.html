@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ensino | Painel Administrativo LAEF</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body class="admin-page">
+
+<div class="admin-layout">
+
+    <!-- MENU LATERAL -->
+
+    <aside class="admin-sidebar">
+
+        <a href="../index.html" class="admin-logo">
+            LAEF<span>.</span>
+            <small>PAINEL ADMINISTRATIVO</small>
+        </a>
+
+        <div class="sidebar-label">MENU PRINCIPAL</div>
+
+        <nav class="admin-nav">
+
+            <a href="dashboard.html"><span>⌂</span> Visão geral</a>
+            <a href="equipe.html"><span>♙</span> Equipe</a>
+            <a href="ensino.html" class="active"><span>∑</span> Ensino</a>
+            <a href="pesquisa.html"><span>⚛</span> Pesquisa</a>
+            <a href="extensao.html"><span>◇</span> Extensão</a>
+            <a href="publicacoes.html"><span>▤</span> Publicações</a>
+            <a href="materiais.html"><span>⌘</span> Materiais e experimentos</a>
+            <a href="destaques.html"><span>✧</span> Destaques</a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html">↗ Visualizar site</a>
+
+            <button id="logout-button">
+                Sair do painel
+                <span>↗</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="admin-main">
+
+        <!-- CABEÇALHO -->
+
+        <header class="admin-header">
+
+            <div>
+                <span class="admin-eyebrow">
+                    LAEF / ADMINISTRAÇÃO / ENSINO
+                </span>
+
+                <h1>Gerenciar <em>ensino.</em></h1>
+            </div>
+
+            <div class="admin-user">
+
+                <span class="user-symbol" id="admin-initial">A</span>
+
+                <div>
+                    <strong id="admin-name">Administrador</strong>
+                    <small>Administrador LAEF</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- INTRODUÇÃO -->
+
+        <section class="module-intro">
+
+            <span class="section-index">MÓDULO 02 / ENSINO</span>
+
+            <h2>
+                Conhecimento que
+                <em>transforma.</em>
+            </h2>
+
+            <p>
+                Organize e disponibilize conteúdos educacionais,
+                atividades, materiais de apoio e recursos
+                pedagógicos desenvolvidos pelo laboratório.
+            </p>
+
+        </section>
+
+
+        <!-- INDICADORES -->
+
+        <section class="module-statistics">
+
+            <article class="stat-card">
+                <span>01 / TOTAL</span>
+                <strong id="total-ensino">—</strong>
+                <small>Conteúdos cadastrados</small>
+            </article>
+
+            <article class="stat-card">
+                <span>02 / PUBLICADOS</span>
+                <strong id="total-publicados">—</strong>
+                <small>Conteúdos disponíveis</small>
+            </article>
+
+            <article class="stat-card">
+                <span>03 / RASCUNHOS</span>
+                <strong id="total-rascunhos">—</strong>
+                <small>Conteúdos não publicados</small>
+            </article>
+
+        </section>
+
+
+        <!-- FORMULÁRIO -->
+
+        <section class="module-form-section" id="form-section">
+
+            <div class="module-heading">
+
+                <div>
+                    <span class="section-index">01 / CADASTRO</span>
+                    <h2 id="form-title">Novo conteúdo.</h2>
+                </div>
+
+            </div>
+
+
+            <form id="ensino-form">
+
+                <input type="hidden" id="conteudo-id">
+
+                <div class="form-group">
+
+                    <h3>Informações do conteúdo</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-field form-field-full">
+
+                            <label for="titulo">Título *</label>
+
+                            <input
+                                type="text"
+                                id="titulo"
+                                required
+                                maxlength="200"
+                                placeholder="Título do conteúdo"
+                            >
+
+                        </div>
+
+                        <div class="form-field form-field-full">
+
+                            <label for="categoria">Categoria</label>
+
+                            <input
+                                type="text"
+                                id="categoria"
+                                maxlength="100"
+                                placeholder="Ex.: Plano de aula, atividade experimental..."
+                            >
+
+                            <small>
+                                Você pode criar categorias livremente.
+                            </small>
+
+                        </div>
+
+                        <div class="form-field form-field-full">
+
+                            <label for="descricao">Descrição</label>
+
+                            <textarea
+                                id="descricao"
+                                rows="6"
+                                placeholder="Apresente o conteúdo, seus objetivos e sua finalidade..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGEM -->
+
+                <div class="form-group">
+
+                    <h3>Imagem de apresentação</h3>
+
+                    <div class="form-field">
+
+                        <label for="imagem">Selecionar imagem</label>
+
+                        <input
+                            type="file"
+                            id="imagem"
+                            accept="image/jpeg,image/png,image/webp"
+                        >
+
+                        <small>
+                            Formatos JPG, PNG ou WebP. Limite de 5 MB.
+                        </small>
+
+                    </div>
+
+                    <div class="photo-preview" id="imagem-preview-area">
+
+                        <span>Pré-visualização da imagem</span>
+
+                        <img
+                            id="imagem-preview"
+                            alt="Pré-visualização"
+                            hidden
+                        >
+
+                    </div>
+
+                    <label class="file-remove-option">
+                        <input type="checkbox" id="remover-imagem">
+                        Remover imagem atual
+                    </label>
+
+                </div>
+
+
+                <!-- ARQUIVO -->
+
+                <div class="form-group">
+
+                    <h3>Documento ou material de apoio</h3>
+
+                    <div class="form-field">
+
+                        <label for="arquivo">Selecionar arquivo</label>
+
+                        <input
+                            type="file"
+                            id="arquivo"
+                            accept=".pdf,.doc,.docx,.ppt,.pptx,.odt,.odp"
+                        >
+
+                        <small>
+                            PDF, DOC, DOCX, PPT, PPTX, ODT ou ODP.
+                            Limite de 20 MB.
+                        </small>
+
+                    </div>
+
+                    <div id="arquivo-atual" class="current-file">
+                        Nenhum arquivo cadastrado.
+                    </div>
+
+                    <label class="file-remove-option">
+                        <input type="checkbox" id="remover-arquivo">
+                        Remover arquivo atual
+                    </label>
+
+                </div>
+
+
+                <!-- PUBLICAÇÃO -->
+
+                <div class="form-group">
+
+                    <h3>Publicação</h3>
+
+                    <div class="form-field">
+
+                        <label for="status">Situação do conteúdo</label>
+
+                        <select id="status" required>
+
+                            <option value="rascunho">Rascunho</option>
+                            <option value="publicado">Publicado</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <p id="form-message" class="form-message"></p>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        id="cancel-edit"
+                        class="button-secondary"
+                        hidden
+                    >
+                        Cancelar edição
+                    </button>
+
+                    <button
+                        type="reset"
+                        id="clear-form"
+                        class="button-secondary"
+                    >
+                        Limpar formulário
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="save-ensino"
+                        class="button-primary"
+                    >
+                        Salvar conteúdo <span>↗</span>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- LISTAGEM -->
+
+        <section class="module-list-section">
+
+            <div class="module-heading">
+
+                <div>
+                    <span class="section-index">02 / GERENCIAMENTO</span>
+                    <h2>Conteúdos cadastrados.</h2>
+                </div>
+
+                <span id="list-status">Carregando conteúdos...</span>
+
+            </div>
+
+
+            <!-- FILTROS -->
+
+            <div class="list-controls">
+
+                <input
+                    type="search"
+                    id="search-ensino"
+                    placeholder="Pesquisar conteúdo..."
+                >
+
+                <input
+                    type="search"
+                    id="filter-categoria"
+                    placeholder="Filtrar categoria..."
+                >
+
+                <select id="filter-status">
+
+                    <option value="">Todos os status</option>
+                    <option value="publicado">Publicados</option>
+                    <option value="rascunho">Rascunhos</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- TABELA -->
+
+            <div class="table-container">
+
+                <table class="admin-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Título</th>
+                            <th>Categoria</th>
+                            <th>Imagem</th>
+                            <th>Arquivo</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="ensino-list">
+
+                        <tr>
+                            <td colspan="6">Carregando conteúdos...</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <p id="list-count" class="list-count">
+                0 conteúdos encontrados
+            </p>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+
+        <footer class="admin-footer">
+
+            <span>LAEF · UFPE · CENTRO ACADÊMICO DO AGRESTE</span>
+
+            <span>GERENCIAMENTO DE ENSINO</span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script type="module" src="js/ensino.js"></script>
+
+</body>
+</html>
