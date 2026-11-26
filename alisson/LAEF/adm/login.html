@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acesso Administrativo | LAEF</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <section class="login-brand">
+
+            <a href="../index.html" class="login-logo">
+                LAEF<span>.</span>
+            </a>
+
+            <p>
+                LABORATÓRIO DE ATIVIDADES
+                E ESTUDOS EM FÍSICA
+            </p>
+
+            <div class="login-decoration">
+                <span>F</span>
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+            </div>
+
+            <small>
+                UFPE · CENTRO ACADÊMICO DO AGRESTE
+            </small>
+
+        </section>
+
+
+        <section class="login-form-area">
+
+            <div class="login-form-content">
+
+                <span class="login-index">
+                    ÁREA RESTRITA / 01
+                </span>
+
+                <h1>
+                    Acesso <em>administrativo.</em>
+                </h1>
+
+                <p class="login-description">
+                    Entre com suas credenciais para
+                    gerenciar os conteúdos do LAEF.
+                </p>
+
+                <form id="login-form">
+
+                    <label for="email">
+                        E-mail institucional
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="seu@email.com"
+                        autocomplete="username"
+                        required
+                    >
+
+                    <label for="password">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button type="submit" id="login-button">
+                        Entrar no painel
+                        <span>↗</span>
+                    </button>
+
+                    <p id="login-message" role="alert"></p>
+
+                </form>
+
+                <a href="../index.html" class="back-site">
+                    ← Retornar ao site
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="js/login.js"></script>
+
+</body>
+</html>

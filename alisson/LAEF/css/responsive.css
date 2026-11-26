@@ -1,0 +1,177 @@
+/* ==========================================
+   LAEF — RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .navigation {
+        gap: 15px;
+    }
+
+    .navigation a {
+        font-size: 11px;
+    }
+
+    .hero-content {
+        gap: 20px;
+    }
+
+    .about-grid {
+        gap: 50px;
+    }
+
+}
+
+@media (max-width: 760px) {
+
+    .section-padding {
+        padding: 75px 0;
+    }
+
+    .header-content {
+        min-height: 75px;
+    }
+
+    .brand-symbol {
+        width: 37px;
+    }
+
+    .brand-text strong {
+        font-size: 20px;
+    }
+
+    .brand-text span {
+        font-size: 8px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px;
+    }
+
+    .menu-toggle span {
+        width: 24px;
+        height: 2px;
+        background: var(--navy);
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 25px 5%;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .navigation a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        padding-top: 80px;
+        padding-bottom: 75px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-visual {
+        margin-top: 25px;
+    }
+
+    .physics-graphic {
+        max-width: 330px;
+    }
+
+    .hero-footer {
+        font-size: 7px;
+        gap: 10px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .section-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .section-top h2 {
+        font-size: 32px;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-card {
+        min-height: 270px;
+    }
+
+    .highlights-placeholder {
+        padding: 40px 30px;
+        min-height: 350px;
+    }
+
+    .placeholder-content h3 {
+        font-size: 31px;
+    }
+
+    .placeholder-symbol {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    .team-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .brand-text span {
+        max-width: 190px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero-footer {
+        letter-spacing: .5px;
+    }
+
+}

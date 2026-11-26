@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Equipe | Painel Administrativo LAEF</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body class="admin-page">
+
+    <div class="admin-layout">
+
+        <!-- MENU LATERAL -->
+
+        <aside class="admin-sidebar">
+
+            <a href="../index.html" class="admin-logo">
+                LAEF<span>.</span>
+                <small>PAINEL ADMINISTRATIVO</small>
+            </a>
+
+            <div class="sidebar-label">
+                MENU PRINCIPAL
+            </div>
+
+            <nav class="admin-nav">
+
+                <a href="dashboard.html">
+                    <span>⌂</span>
+                    Visão geral
+                </a>
+
+                <a href="equipe.html" class="active">
+                    <span>♙</span>
+                    Equipe
+                </a>
+
+                <a href="ensino.html">
+                    <span>∑</span>
+                    Ensino
+                </a>
+
+                <a href="pesquisa.html">
+                    <span>⚛</span>
+                    Pesquisa
+                </a>
+
+                <a href="extensao.html">
+                    <span>◇</span>
+                    Extensão
+                </a>
+
+                <a href="publicacoes.html">
+                    <span>▤</span>
+                    Publicações
+                </a>
+
+                <a href="materiais.html">
+                    <span>⌘</span>
+                    Materiais e experimentos
+                </a>
+
+                <a href="destaques.html">
+                    <span>✧</span>
+                    Destaques
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="../index.html">
+                    ↗ Visualizar site
+                </a>
+
+                <button id="logout-button">
+                    Sair do painel
+                    <span>↗</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+
+        <main class="admin-main">
+
+            <!-- CABEÇALHO -->
+
+            <header class="admin-header">
+
+                <div>
+                    <span class="admin-eyebrow">
+                        LAEF / ADMINISTRAÇÃO / EQUIPE
+                    </span>
+
+                    <h1>
+                        Gerenciar <em>equipe.</em>
+                    </h1>
+                </div>
+
+                <div class="admin-user">
+
+                    <span class="user-symbol" id="admin-initial">
+                        A
+                    </span>
+
+                    <div>
+                        <strong id="admin-name">
+                            Administrador
+                        </strong>
+
+                        <small>Administrador LAEF</small>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- INTRODUÇÃO -->
+
+            <section class="module-intro">
+
+                <span class="section-index">
+                    MÓDULO 01 / INTEGRANTES
+                </span>
+
+                <h2>
+                    Pessoas que constroem
+                    <em>o LAEF.</em>
+                </h2>
+
+                <p>
+                    Cadastre, organize e atualize as informações
+                    dos integrantes do Laboratório de Atividades
+                    e Estudos em Física.
+                </p>
+
+            </section>
+
+
+            <!-- INDICADORES -->
+
+            <section class="module-statistics">
+
+                <article class="stat-card">
+
+                    <span>01 / TOTAL</span>
+
+                    <strong id="total-integrantes">—</strong>
+
+                    <small>Integrantes cadastrados</small>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <span>02 / PUBLICADOS</span>
+
+                    <strong id="total-publicados">—</strong>
+
+                    <small>Integrantes visíveis no site</small>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <span>03 / RASCUNHOS</span>
+
+                    <strong id="total-rascunhos">—</strong>
+
+                    <small>Cadastros não publicados</small>
+
+                </article>
+
+            </section>
+
+
+            <!-- FORMULÁRIO -->
+
+            <section class="module-form-section" id="form-section">
+
+                <div class="module-heading">
+
+                    <div>
+                        <span class="section-index">
+                            01 / CADASTRO
+                        </span>
+
+                        <h2 id="form-title">
+                            Novo integrante.
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <form id="equipe-form">
+
+                    <input type="hidden" id="integrante-id">
+
+                    <!-- INFORMAÇÕES PRINCIPAIS -->
+
+                    <div class="form-group">
+
+                        <h3>Informações pessoais</h3>
+
+                        <div class="form-grid">
+
+                            <div class="form-field form-field-full">
+
+                                <label for="nome">
+                                    Nome completo *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    required
+                                    placeholder="Nome do integrante"
+                                >
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="categoria">
+                                    Categoria *
+                                </label>
+
+                                <select id="categoria" required>
+
+                                    <option value="">
+                                        Selecione uma categoria
+                                    </option>
+
+                                    <option value="professor">
+                                        Professor
+                                    </option>
+
+                                    <option value="pesquisador">
+                                        Pesquisador
+                                    </option>
+
+                                    <option value="estudante">
+                                        Estudante
+                                    </option>
+
+                                    <option value="colaborador">
+                                        Colaborador
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="funcao">
+                                    Função no laboratório
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="funcao"
+                                    placeholder="Ex.: Coordenador"
+                                >
+
+                            </div>
+
+
+                            <div class="form-field form-field-full">
+
+                                <label for="formacao">
+                                    Formação acadêmica
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="formacao"
+                                    placeholder="Ex.: Doutor em Física"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DESCRIÇÃO -->
+
+                    <div class="form-group">
+
+                        <h3>Apresentação</h3>
+
+                        <div class="form-field">
+
+                            <label for="descricao">
+                                Descrição / Biografia
+                            </label>
+
+                            <textarea
+                                id="descricao"
+                                rows="5"
+                                placeholder="Escreva uma breve apresentação do integrante..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTATO -->
+
+                    <div class="form-group">
+
+                        <h3>Contato e informações acadêmicas</h3>
+
+                        <div class="form-grid">
+
+                            <div class="form-field">
+
+                                <label for="email">
+                                    E-mail
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="email@exemplo.com"
+                                >
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="lattes">
+                                    Currículo Lattes
+                                </label>
+
+                                <input
+                                    type="url"
+                                    id="lattes"
+                                    placeholder="https://lattes.cnpq.br/..."
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FOTOGRAFIA -->
+
+                    <div class="form-group">
+
+                        <h3>Fotografia</h3>
+
+                        <div class="form-field">
+
+                            <label for="foto">
+                                Foto do integrante
+                            </label>
+
+                            <input
+                                type="file"
+                                id="foto"
+                                accept="image/*"
+                            >
+
+                            <small>
+                                Prefira imagens em formato JPG, PNG ou WebP.
+                            </small>
+
+                        </div>
+
+                        <div class="photo-preview" id="photo-preview">
+
+                            <span>
+                                Pré-visualização da fotografia
+                            </span>
+
+                            <img
+                                id="preview-image"
+                                alt="Pré-visualização da fotografia"
+                                hidden
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ORGANIZAÇÃO -->
+
+                    <div class="form-group">
+
+                        <h3>Publicação e organização</h3>
+
+                        <div class="form-grid">
+
+                            <div class="form-field">
+
+                                <label for="ordem">
+                                    Ordem de exibição
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="ordem"
+                                    value="0"
+                                    min="0"
+                                >
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="status">
+                                    Situação
+                                </label>
+
+                                <select id="status" required>
+
+                                    <option value="rascunho">
+                                        Rascunho
+                                    </option>
+
+                                    <option value="publicado">
+                                        Publicado
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MENSAGEM -->
+
+                    <p id="form-message" class="form-message"></p>
+
+
+                    <!-- BOTÕES -->
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            id="cancel-edit"
+                            class="button-secondary"
+                            hidden
+                        >
+                            Cancelar edição
+                        </button>
+
+                        <button
+                            type="reset"
+                            class="button-secondary"
+                            id="clear-form"
+                        >
+                            Limpar formulário
+                        </button>
+
+                        <button
+                            type="submit"
+                            id="save-integrante"
+                            class="button-primary"
+                        >
+                            Salvar integrante
+                            <span>↗</span>
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- LISTAGEM -->
+
+            <section class="module-list-section">
+
+                <div class="module-heading">
+
+                    <div>
+                        <span class="section-index">
+                            02 / GERENCIAMENTO
+                        </span>
+
+                        <h2>Integrantes cadastrados.</h2>
+                    </div>
+
+                    <span id="list-status">
+                        Carregando integrantes...
+                    </span>
+
+                </div>
+
+
+                <!-- FILTROS -->
+
+                <div class="list-controls">
+
+                    <input
+                        type="search"
+                        id="search-integrante"
+                        placeholder="Pesquisar integrante..."
+                    >
+
+                    <select id="filter-categoria">
+
+                        <option value="">
+                            Todas as categorias
+                        </option>
+
+                        <option value="professor">
+                            Professores
+                        </option>
+
+                        <option value="pesquisador">
+                            Pesquisadores
+                        </option>
+
+                        <option value="estudante">
+                            Estudantes
+                        </option>
+
+                        <option value="colaborador">
+                            Colaboradores
+                        </option>
+
+                    </select>
+
+
+                    <select id="filter-status">
+
+                        <option value="">
+                            Todos os status
+                        </option>
+
+                        <option value="publicado">
+                            Publicados
+                        </option>
+
+                        <option value="rascunho">
+                            Rascunhos
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TABELA -->
+
+                <div class="table-container">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Integrante</th>
+                                <th>Categoria</th>
+                                <th>Função</th>
+                                <th>Ordem</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="equipe-list">
+
+                            <tr>
+                                <td colspan="6">
+                                    Carregando integrantes...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p id="list-count" class="list-count">
+                    0 integrantes encontrados
+                </p>
+
+            </section>
+
+
+            <!-- RODAPÉ -->
+
+            <footer class="admin-footer">
+
+                <span>
+                    LAEF · UFPE · CENTRO ACADÊMICO DO AGRESTE
+                </span>
+
+                <span>
+                    GERENCIAMENTO DA EQUIPE
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script type="module" src="js/equipe.js"></script>
+
+</body>
+</html>

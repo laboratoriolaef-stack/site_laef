@@ -1,0 +1,705 @@
+
+/* ==========================================
+   LAEF — PÁGINAS DE ATUAÇÃO
+   Ensino · Pesquisa · Extensão
+========================================== */
+
+
+/* HERO */
+
+.action-hero {
+    min-height: 480px;
+    background: var(--navy);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.action-hero-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+
+    background-size: 65px 65px;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 35%,
+        black
+    );
+}
+
+.action-hero-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 85px;
+    padding-bottom: 100px;
+}
+
+.action-hero-content h1 {
+    font-family: var(--font-editorial);
+    font-size: clamp(65px, 8vw, 100px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 25px 0;
+}
+
+.action-hero-content h1 span {
+    color: #91b3d2;
+}
+
+.action-hero-content p {
+    max-width: 550px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #b9c5d2;
+}
+
+.action-hero-number {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.action-hero-number span {
+    font-family: var(--font-editorial);
+    font-size: 100px;
+    color: rgba(255,255,255,.12);
+}
+
+.action-hero-number small {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #A9C4DD;
+}
+
+.action-hero-footer {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+
+    min-height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255,255,255,.13);
+
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #8295aa;
+}
+
+
+/* INTRODUÇÃO */
+
+.action-intro {
+    background: #DCE4EB;
+}
+
+.action-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.action-intro-grid h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(38px, 4.5vw, 55px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 22px;
+}
+
+.action-intro-grid h2 em {
+    color: var(--blue);
+}
+
+.action-intro-text {
+    padding-top: 30px;
+}
+
+.action-intro-text p {
+    font-size: 14px;
+    color: #536477;
+    line-height: 2;
+    margin-bottom: 22px;
+}
+
+.action-intro-text .action-lead {
+    font-size: 18px;
+    color: var(--navy);
+    line-height: 1.8;
+}
+
+
+/* EIXOS DE ATUAÇÃO */
+
+.action-topics {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.action-section-heading {
+    margin-bottom: 50px;
+}
+
+.action-section-heading .section-index {
+    color: #A9C4DD;
+}
+
+.action-section-heading h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 20px;
+}
+
+.action-topic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.action-topic {
+    min-height: 300px;
+    padding: 32px;
+
+    background: var(--navy-light);
+    border: 1px solid rgba(255,255,255,.12);
+
+    transition: .3s;
+}
+
+.action-topic:hover {
+    transform: translateY(-5px);
+    background: #223B5B;
+    border-color: #91B3D2;
+}
+
+.action-topic > span {
+    font-size: 10px;
+    color: #A9C4DD;
+}
+
+.topic-symbol {
+    font-family: var(--font-editorial);
+    font-size: 42px;
+    color: #A9C4DD;
+    margin: 25px 0 15px;
+}
+
+.action-topic h3 {
+    font-family: var(--font-editorial);
+    font-size: 23px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.action-topic p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: #B9C5D2;
+}
+
+
+/* PRODUÇÃO CIENTÍFICA */
+
+.research-publications {
+    background: #192D49;
+    color: var(--white);
+    padding: 85px 0;
+}
+
+.research-publications-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+}
+
+.research-publications .section-index {
+    color: #A9C4DD;
+}
+
+.research-publications h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(38px, 4vw, 52px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 22px 0;
+}
+
+.research-publications h2 em {
+    color: #A9C4DD;
+}
+
+.research-publications p {
+    max-width: 550px;
+    font-size: 13px;
+    color: #B9C5D2;
+    line-height: 1.9;
+}
+
+.research-publications .button-primary {
+    flex-shrink: 0;
+}
+
+
+/* ENCERRAMENTO */
+
+.action-closing {
+    background: #DCE4EB;
+    padding: 100px 0;
+}
+
+.action-closing .section-index {
+    color: var(--blue);
+}
+
+.action-closing h2 {
+    max-width: 750px;
+    font-family: var(--font-editorial);
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 25px 0 35px;
+}
+
+.action-closing .button-primary {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.action-closing .button-primary:hover {
+    background: var(--navy-light);
+}
+
+
+/* VARIAÇÕES DE IDENTIDADE */
+
+.research-hero {
+    background: #101F35;
+}
+
+.extension-hero {
+    background: #192D49;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+
+    .action-intro-grid {
+        gap: 50px;
+    }
+
+}
+
+@media (max-width: 760px) {
+
+    .action-hero {
+        min-height: 420px;
+    }
+
+    .action-hero-content {
+        padding-top: 75px;
+        padding-bottom: 85px;
+    }
+
+    .action-hero-content h1 {
+        font-size: 65px;
+    }
+
+    .action-hero-number {
+        display: none;
+    }
+
+    .action-hero-footer {
+        font-size: 7px;
+        letter-spacing: .5px;
+        gap: 10px;
+    }
+
+    .action-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .action-intro-text {
+        padding-top: 0;
+    }
+
+    .action-topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .action-topic {
+        min-height: 260px;
+    }
+
+    .research-publications-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .action-closing {
+        padding: 75px 0;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .action-hero-content h1 {
+        font-size: 54px;
+    }
+
+    .action-hero-content p {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ==========================================
+   LAEF — PROJETOS PÚBLICOS DE PESQUISA
+========================================== */
+
+.pesquisa-publicacoes {
+    background: #dce5ec;
+}
+
+.pesquisa-publicacoes .action-section-heading {
+    margin-bottom: 55px;
+}
+
+.pesquisa-publicacoes .action-section-heading h2 {
+    margin-top: 20px;
+}
+
+.pesquisa-publicacoes .action-section-heading p {
+    max-width: 620px;
+    margin-top: 18px;
+    color: #60758a;
+    line-height: 1.8;
+}
+
+/* GRID */
+
+.pesquisa-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+/* CARD */
+
+.pesquisa-card {
+    background: #f1f5f7;
+    border: 1px solid #cbd7e0;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pesquisa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(18, 39, 61, 0.08);
+}
+
+/* IMAGEM */
+
+.pesquisa-card-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #cbd7e0;
+}
+
+.pesquisa-card-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pesquisa-card:hover .pesquisa-card-image img {
+    transform: scale(1.04);
+}
+
+/* INFORMAÇÕES */
+
+.pesquisa-card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.pesquisa-card-area {
+    color: #648bb0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.pesquisa-card-content h3 {
+    color: #12243b;
+    font-family: "Playfair Display", serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0 0 15px;
+}
+
+.pesquisa-card-content p {
+    color: #52677c;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0 0 20px;
+    white-space: pre-line;
+}
+
+/* RESPONSÁVEL */
+
+.pesquisa-card-responsavel {
+    color: #52677c;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.pesquisa-card-responsavel strong {
+    color: #12243b;
+    font-weight: 600;
+}
+
+/* BOTÃO */
+
+.pesquisa-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin-top: auto;
+    padding: 13px 18px;
+    background: #12243b;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.pesquisa-card-link:hover {
+    background: #315d83;
+}
+
+/* ESTADOS */
+
+.pesquisa-estado {
+    grid-column: 1 / -1;
+    padding: 45px 30px;
+    border: 1px dashed #aebfce;
+    color: #52677c;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.pesquisa-estado.erro {
+    color: #a43b3b;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+    .pesquisa-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pesquisa-card-image {
+        height: 220px;
+    }
+
+    .pesquisa-card-content {
+        padding: 24px;
+    }
+
+    .pesquisa-card-content h3 {
+        font-size: 1.4rem;
+    }
+
+}
+
+/* ==========================================
+   LAEF — AÇÕES DE EXTENSÃO
+========================================== */
+
+.extension-projects {
+    background: #dce5ed;
+    color: #102239;
+}
+
+.extension-projects .action-section-heading {
+    margin-bottom: 55px;
+}
+
+.extension-projects .action-section-heading h2 {
+    max-width: 850px;
+}
+
+.extension-projects .action-section-heading p {
+    max-width: 650px;
+    margin-top: 18px;
+    color: #60758b;
+    line-height: 1.8;
+}
+
+.extension-project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.extension-project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid #cbd7e1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.extension-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(16, 34, 57, 0.10);
+}
+
+.extension-project-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #1b304b;
+}
+
+.extension-project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.extension-project-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    padding: 30px;
+}
+
+.extension-project-label {
+    margin-bottom: 18px;
+    color: #608bb2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.extension-project-content h3 {
+    margin: 0 0 16px;
+    color: #102239;
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.extension-project-summary {
+    color: #344d66;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.extension-project-description {
+    color: #60758b;
+    font-size: 14px;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.extension-project-responsible {
+    margin-top: auto;
+    padding-top: 20px;
+    color: #60758b;
+    font-size: 12px;
+}
+
+.extension-project-link {
+    display: inline-block;
+    margin-top: 22px;
+    padding-bottom: 5px;
+    color: #173b60;
+    border-bottom: 1px solid #608bb2;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.extension-project-link:hover {
+    color: #608bb2;
+}
+
+.extension-state {
+    grid-column: 1 / -1;
+    padding: 35px;
+    color: #60758b;
+    text-align: center;
+    border: 1px solid #cbd7e1;
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.extension-error {
+    color: #a43c3c;
+}
+
+@media (max-width: 900px) {
+
+    .extension-project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .extension-project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .extension-project-content {
+        padding: 24px;
+    }
+
+}

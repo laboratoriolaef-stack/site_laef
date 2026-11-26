@@ -1,0 +1,659 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Gerenciamento de publicações do LAEF.">
+
+    <title>Publicações | Administração LAEF</title>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos administrativos -->
+    <link rel="stylesheet" href="css/admin.css">
+
+    <!-- Estilos específicos de publicações -->
+    <link rel="stylesheet" href="css/publicacoes.css">
+
+    <!-- JavaScript -->
+    <script type="module" src="js/publicacoes.js"></script>
+</head>
+
+</head>
+
+<body class="admin-page">
+
+    <div class="admin-layout">
+
+        <!-- ==================================
+             MENU LATERAL
+        =================================== -->
+
+        <aside class="admin-sidebar">
+
+            <a href="dashboard.html" class="admin-logo">
+
+                <div class="admin-logo-symbol">
+                    LAEF<span>.</span>
+                </div>
+
+                <div>
+                    <strong>LAEF</strong>
+                    <small>PAINEL ADMINISTRATIVO</small>
+                </div>
+
+            </a>
+
+            <div class="sidebar-label">
+                MENU PRINCIPAL
+            </div>
+
+            <nav class="admin-nav">
+
+                <a href="dashboard.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="equipe.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">♙</span>
+                    <span>Equipe</span>
+                </a>
+
+                <a href="ensino.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">∑</span>
+                    <span>Ensino</span>
+                </a>
+
+                <a href="pesquisa.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">⌕</span>
+                    <span>Pesquisa</span>
+                </a>
+
+                <a href="extensao.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">◎</span>
+                    <span>Extensão</span>
+                </a>
+
+                <a href="publicacoes.html" class="admin-nav-item active">
+                    <span class="admin-nav-icon">▤</span>
+                    <span>Publicações</span>
+                </a>
+
+                <a href="materiais.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">▧</span>
+                    <span>Materiais</span>
+                </a>
+
+                <a href="destaques.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">✧</span>
+                    <span>Destaques</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="../index.html" class="admin-nav-item">
+                    <span class="admin-nav-icon">↗</span>
+                    <span>Visualizar site</span>
+                </a>
+
+                <button type="button" id="logout-button"
+                    class="admin-nav-item logout-button">
+
+                    <span class="admin-nav-icon">⇥</span>
+                    <span>Sair do painel</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==================================
+             CONTEÚDO PRINCIPAL
+        =================================== -->
+
+        <main class="admin-main">
+
+            <!-- CABEÇALHO -->
+
+            <header class="admin-header">
+
+                <div>
+                    <span class="section-index">
+                        GERENCIAMENTO DE CONTEÚDO
+                    </span>
+
+                    <h1>Publicações</h1>
+                </div>
+
+                <div class="admin-user">
+
+                    <div class="user-symbol">
+                        A
+                    </div>
+
+                    <div>
+                        <strong id="admin-name">
+                            Administrador
+                        </strong>
+
+                        <small>Administrador</small>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- APRESENTAÇÃO -->
+
+            <section class="admin-welcome">
+
+                <div>
+
+                    <span class="section-index">
+                        LAEF / PUBLICAÇÕES
+                    </span>
+
+                    <h2>
+                        Produção acadêmica.
+                    </h2>
+
+                    <p>
+                        Gerencie artigos, trabalhos acadêmicos,
+                        livros, eventos e outras produções
+                        científicas vinculadas ao laboratório.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 INDICADORES
+            =================================== -->
+
+            <section class="admin-statistics">
+
+                <article class="admin-stat-card">
+
+                    <span>Total de publicações</span>
+
+                    <strong id="total-publicacoes">0</strong>
+
+                    <small>Registros cadastrados</small>
+
+                </article>
+
+                <article class="admin-stat-card">
+
+                    <span>Publicadas</span>
+
+                    <strong id="publicacoes-publicadas">0</strong>
+
+                    <small>Visíveis no site</small>
+
+                </article>
+
+                <article class="admin-stat-card">
+
+                    <span>Rascunhos</span>
+
+                    <strong id="publicacoes-rascunhos">0</strong>
+
+                    <small>Aguardando publicação</small>
+
+                </article>
+
+            </section>
+
+
+            <!-- ==================================
+                 FORMULÁRIO
+            =================================== -->
+
+            <section class="admin-section" id="formulario-section">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <span class="section-index">
+                            GERENCIAMENTO
+                        </span>
+
+                        <h2 id="formulario-titulo">
+                            Cadastrar publicação
+                        </h2>
+
+                        <p>
+                            Preencha os dados da produção acadêmica.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="form-publicacao">
+
+                    <input type="hidden" id="publicacao-id">
+
+                    <input type="hidden" id="arquivo-atual">
+
+
+                    <!-- DADOS PRINCIPAIS -->
+
+                    <div class="form-grid">
+
+                        <div class="form-group full-width">
+
+                            <label for="titulo">
+                                Título da publicação *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="titulo"
+                                name="titulo"
+                                placeholder="Digite o título da publicação"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="autores">
+                                Autores
+                            </label>
+
+                            <input
+                                type="text"
+                                id="autores"
+                                name="autores"
+                                placeholder="Nome dos autores">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="categoria">
+                                Categoria *
+                            </label>
+
+                            <select id="categoria" name="categoria" required>
+
+                                <option value="">
+                                    Selecione uma categoria
+                                </option>
+
+                                <option value="artigo">Artigo</option>
+
+                                <option value="evento">Evento</option>
+
+                                <option value="tcc">TCC</option>
+
+                                <option value="livro">Livro</option>
+
+                                <option value="outros">Outros</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="ano">
+                                Ano de publicação
+                            </label>
+
+                            <input
+                                type="number"
+                                id="ano"
+                                name="ano"
+                                min="1900"
+                                step="1"
+                                placeholder="Ex.: 2026">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="status">
+                                Situação *
+                            </label>
+
+                            <select id="status" name="status" required>
+
+                                <option value="rascunho">
+                                    Rascunho
+                                </option>
+
+                                <option value="publicado">
+                                    Publicado
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="resumo">
+                                Resumo
+                            </label>
+
+                            <textarea
+                                id="resumo"
+                                name="resumo"
+                                rows="5"
+                                placeholder="Apresente um resumo da publicação..."></textarea>
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="palavras-chave">
+                                Palavras-chave
+                            </label>
+
+                            <input
+                                type="text"
+                                id="palavras-chave"
+                                name="palavras_chave"
+                                placeholder="Ex.: Física, Educação, Ensino de Ciências">
+
+                            <small>
+                                Separe as palavras-chave por vírgulas.
+                            </small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doi">
+                                DOI
+                            </label>
+
+                            <input
+                                type="text"
+                                id="doi"
+                                name="doi"
+                                placeholder="10.xxxx/xxxxx">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="link-externo">
+                                Link externo
+                            </label>
+
+                            <input
+                                type="url"
+                                id="link-externo"
+                                name="link_externo"
+                                placeholder="https://...">
+
+                        </div>
+
+
+                        <!-- ARQUIVO PDF -->
+
+                        <div class="form-group full-width">
+
+                            <label for="arquivo">
+                                Arquivo da publicação (PDF)
+                            </label>
+
+                            <div class="file-upload-area">
+
+                                <input
+                                    type="file"
+                                    id="arquivo"
+                                    name="arquivo"
+                                    accept=".pdf,application/pdf">
+
+                                <p>
+                                    Selecione um arquivo PDF.
+                                    Tamanho máximo: 20 MB.
+                                </p>
+
+                            </div>
+
+                            <div id="arquivo-atual-info"
+                                class="file-current-info"
+                                hidden>
+
+                                <span id="arquivo-nome"></span>
+
+                                <button type="button"
+                                    id="remover-arquivo"
+                                    class="button-text-danger">
+
+                                    Remover arquivo
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BOTÕES -->
+
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            id="salvar-publicacao"
+                            class="button-primary">
+
+                            Salvar publicação
+
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cancelar-edicao"
+                            class="button-secondary"
+                            hidden>
+
+                            Cancelar edição
+
+                        </button>
+
+                    </div>
+
+                    <p id="mensagem-formulario"
+                        class="form-message"
+                        role="status"
+                        aria-live="polite">
+                    </p>
+
+                </form>
+
+            </section>
+
+
+            <!-- ==================================
+                 LISTAGEM
+            =================================== -->
+
+            <section class="admin-section">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <span class="section-index">
+                            ACERVO ACADÊMICO
+                        </span>
+
+                        <h2>Publicações cadastradas</h2>
+
+                        <p>
+                            Consulte, edite, publique ou exclua
+                            os registros.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FILTROS -->
+
+                <div class="publication-filters">
+
+                    <div class="form-group">
+
+                        <label for="filtro-busca">
+                            Buscar publicação
+                        </label>
+
+                        <input
+                            type="search"
+                            id="filtro-busca"
+                            placeholder="Pesquisar pelo título ou autor...">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="filtro-categoria">
+                            Categoria
+                        </label>
+
+                        <select id="filtro-categoria">
+
+                            <option value="">
+                                Todas as categorias
+                            </option>
+
+                            <option value="artigo">Artigo</option>
+                            <option value="evento">Evento</option>
+                            <option value="tcc">TCC</option>
+                            <option value="livro">Livro</option>
+                            <option value="outros">Outros</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="filtro-status">
+                            Situação
+                        </label>
+
+                        <select id="filtro-status">
+
+                            <option value="">
+                                Todas as situações
+                            </option>
+
+                            <option value="publicado">Publicado</option>
+                            <option value="rascunho">Rascunho</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABELA -->
+
+                <div class="admin-table-container">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Publicação</th>
+                                <th>Categoria</th>
+                                <th>Ano</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="lista-publicacoes">
+
+                            <tr>
+
+                                <td colspan="5">
+                                    Carregando publicações...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p id="mensagem-listagem"
+                    class="form-message"
+                    role="status"
+                    aria-live="polite">
+                </p>
+
+            </section>
+
+
+            <!-- RODAPÉ -->
+
+            <footer class="admin-footer">
+
+                <span>
+                    © 2026 LAEF · Painel administrativo
+                </span>
+
+                <a href="../index.html">
+                    Voltar ao site ↗
+                </a>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
