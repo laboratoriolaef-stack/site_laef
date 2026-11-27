@@ -8,8 +8,8 @@
     --navy: #101f35;
     --navy-light: #192d49;
     --blue: #537da5;
-    --white: #ffffff;
-    --paper: #f7f7f4;
+    --white: #FFFFFF;
+    --paper: #f8f8f8;
     --gray: #777e87;
     --border: #e5e7e9;
 
@@ -130,6 +130,25 @@ button {
     font-weight: 700;
 }
 
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+}
+
+/* LOGO DO CABEÇALHO */
+.brand-logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
 
 /* ==========================================
    MENU MOBILE
