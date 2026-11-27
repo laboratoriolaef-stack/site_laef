@@ -1,0 +1,501 @@
+
+/* ==========================================
+   LAEF — MATERIAIS E EXPERIMENTOS
+   PAINEL ADMINISTRATIVO
+========================================== */
+
+:root {
+    --mat-navy: #123552;
+    --mat-blue: #24618a;
+    --mat-light: #f1f5f7;
+    --mat-border: #d8e2e9;
+    --mat-muted: #60717e;
+    --mat-white: #ffffff;
+}
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL
+========================================== */
+
+.admin-main {
+    min-width: 0;
+}
+
+.admin-section {
+    margin-bottom: 35px;
+}
+
+/* ==========================================
+   INDICADORES
+========================================== */
+
+.admin-statistics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 30px 0 40px;
+}
+
+.admin-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    padding: 25px;
+
+    background: var(--mat-white);
+    border: 1px solid var(--mat-border);
+    border-radius: 5px;
+}
+
+.admin-stat-card > span {
+    color: var(--mat-muted);
+    font-size: 0.88rem;
+}
+
+.admin-stat-card > strong {
+    color: var(--mat-navy);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    font-weight: 500;
+}
+
+.admin-stat-card > small {
+    color: var(--mat-muted);
+    font-size: 0.8rem;
+}
+
+/* ==========================================
+   SEÇÕES
+========================================== */
+
+.admin-section {
+    padding: 30px;
+    background: var(--mat-white);
+    border: 1px solid var(--mat-border);
+    border-radius: 5px;
+}
+
+.admin-section-header {
+    margin-bottom: 28px;
+}
+
+.admin-section-header h2 {
+    margin: 8px 0;
+    color: var(--mat-navy);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.admin-section-header p {
+    color: var(--mat-muted);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+
+#form-material {
+    width: 100%;
+}
+
+#form-material .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 25px;
+    row-gap: 24px;
+}
+
+#form-material .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+#form-material .form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+#form-material label {
+    display: block;
+    margin: 0;
+    color: #243746;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#form-material input:not([type="file"]):not([type="hidden"]),
+#form-material select,
+#form-material textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--mat-border);
+    border-radius: 4px;
+
+    background: #ffffff;
+    color: #243746;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#form-material input:focus,
+#form-material select:focus,
+#form-material textarea:focus {
+    border-color: var(--mat-blue);
+    box-shadow: 0 0 0 3px rgba(36, 97, 138, 0.1);
+}
+
+#form-material textarea {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+#form-material .form-group small {
+    color: var(--mat-muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   UPLOAD DE ARQUIVOS
+========================================== */
+
+.file-upload-area {
+    padding: 22px;
+    border: 1px dashed #b7c8d2;
+    border-radius: 5px;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+.file-upload-area:hover {
+    border-color: var(--mat-blue);
+    background: #f1f6fa;
+}
+
+.file-upload-area input[type="file"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+}
+
+.file-upload-area p {
+    margin: 12px 0 0;
+    color: var(--mat-muted);
+    font-size: 0.83rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   ARQUIVOS ATUAIS
+========================================== */
+
+.file-current-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-top: 12px;
+    padding: 14px;
+
+    border: 1px solid var(--mat-border);
+    border-radius: 5px;
+    background: #f8fafc;
+}
+
+.file-current-info[hidden] {
+    display: none;
+}
+
+.file-current-info span {
+    color: #405565;
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
+}
+
+.button-text-danger {
+    padding: 7px 10px;
+    border: none;
+    background: transparent;
+    color: #b42318;
+    font-size: 0.83rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button-text-danger:hover {
+    background: transparent;
+    color: #7a1710;
+}
+
+/* ==========================================
+   BOTÕES DO FORMULÁRIO
+========================================== */
+
+#form-material .form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+#form-material .form-actions button {
+    min-width: 150px;
+}
+
+#salvar-material:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* ==========================================
+   MENSAGENS
+========================================== */
+
+.form-message {
+    margin-top: 15px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.form-message:empty {
+    display: none;
+}
+
+.form-message.error {
+    color: #b42318;
+}
+
+.form-message.success {
+    color: #167647;
+}
+
+/* ==========================================
+   FILTROS
+========================================== */
+
+.material-filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.material-filters .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.material-filters label {
+    color: #243746;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.material-filters input,
+.material-filters select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--mat-border);
+    border-radius: 4px;
+    background: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+}
+
+/* ==========================================
+   TABELA
+========================================== */
+
+.admin-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--mat-border);
+}
+
+.admin-table th {
+    background: #f5f8fa;
+    color: var(--mat-navy);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.admin-table td {
+    color: #405565;
+    font-size: 0.88rem;
+}
+
+.admin-table td strong {
+    display: block;
+    color: var(--mat-navy);
+}
+
+.material-subtitle {
+    display: block;
+    margin-top: 5px;
+    color: var(--mat-muted);
+    font-size: 0.8rem;
+}
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.status-badge {
+    display: inline-flex;
+    padding: 6px 11px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-publicado {
+    color: #167647;
+    background: #e7f5ec;
+}
+
+.status-rascunho {
+    color: #667085;
+    background: #f1f2f4;
+}
+
+/* ==========================================
+   AÇÕES DA TABELA
+========================================== */
+
+.material-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-edit,
+.action-delete {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.action-edit {
+    border: 1px solid var(--mat-border);
+    background: white;
+    color: var(--mat-navy);
+}
+
+.action-edit:hover {
+    background: #edf3f7;
+}
+
+.action-delete {
+    border: 1px solid #f0d0ce;
+    background: white;
+    color: #b42318;
+}
+
+.action-delete:hover {
+    background: #fff0ef;
+}
+
+/* ==========================================
+   RESPONSIVIDADE — TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .material-filters {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .material-filters .form-group:first-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVIDADE — CELULAR
+========================================== */
+
+@media (max-width: 700px) {
+
+    .admin-statistics {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .admin-section {
+        padding: 20px 15px;
+    }
+
+    #form-material .form-grid {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
+    #form-material .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .material-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .material-filters .form-group:first-child {
+        grid-column: auto;
+    }
+
+    .file-current-info {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .material-actions {
+        flex-wrap: wrap;
+    }
+
+    .admin-table {
+        min-width: 650px;
+    }
+
+    #form-material .form-actions {
+        flex-direction: column;
+    }
+
+    #form-material .form-actions button {
+        width: 100%;
+    }
+
+}

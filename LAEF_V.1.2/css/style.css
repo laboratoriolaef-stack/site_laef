@@ -1,0 +1,883 @@
+
+/* ==========================================
+   LAEF — IDENTIDADE VISUAL
+   Minimalista editorial
+========================================== */
+
+:root {
+    --navy: #101f35;
+    --navy-light: #192d49;
+    --blue: #537da5;
+    --white: #FFFFFF;
+    --paper: #f8f8f8;
+    --gray: #777e87;
+    --border: #e5e7e9;
+
+    --font-main: 'DM Sans', sans-serif;
+    --font-editorial: 'Playfair Display', serif;
+
+    --container: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--navy);
+    background: var(--paper);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+.container {
+    width: min(90%, var(--container));
+    margin: auto;
+}
+
+.section-padding {
+    padding: 110px 0;
+}
+
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
+
+.header {
+    width: 100%;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 100;
+}
+
+.header-content {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-symbol {
+    width: 43px;
+    height: 43px;
+    color: var(--navy);
+}
+
+.brand-symbol svg {
+    width: 100%;
+    height: 100%;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-text strong {
+    font-size: 23px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.brand-text span {
+    font-size: 9px;
+    color: var(--gray);
+    letter-spacing: .3px;
+    text-align: center;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.navigation a {
+    font-size: 12px;
+    font-weight: 500;
+    color: #596473;
+    transition: .3s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: var(--navy);
+}
+
+.navigation a.active {
+    font-weight: 700;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+}
+
+/* LOGO DO CABEÇALHO */
+.brand-logo img {
+    width: 60px;
+    height: 70px;
+    object-fit:contain;
+    
+}
+
+/* ==========================================
+   MENU MOBILE
+========================================== */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+    min-height: 660px;
+    background: var(--navy);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+
+    background-size: 65px 65px;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 35%,
+        black
+    );
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    z-index: 2;
+    padding-top: 65px;
+    padding-bottom: 85px;
+}
+
+.eyebrow,
+.section-index {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #8da9c4;
+}
+
+.hero h1 {
+    font-family: var(--font-editorial);
+    font-size: clamp(43px, 5.2vw, 68px);
+    font-weight: 400;
+    line-height: 1.12;
+    max-width: 650px;
+    margin: 28px 0;
+}
+
+.hero h1 span {
+    color: #91b3d2;
+    font-style: italic;
+}
+
+.hero-text > p {
+    max-width: 490px;
+    font-size: 14px;
+    color: #b9c5d2;
+    line-height: 1.9;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 36px;
+}
+
+.button-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: var(--white);
+    color: var(--navy);
+    padding: 15px 21px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.button-primary:hover {
+    background: #dce7f0;
+    transform: translateY(-3px);
+}
+
+.button-primary span,
+.button-secondary span,
+.text-link span {
+    font-size: 17px;
+}
+
+.button-secondary {
+    color: var(--white);
+    font-size: 12px;
+    border-bottom: 1px solid #8295aa;
+    padding-bottom: 5px;
+    transition: .3s;
+}
+
+.button-secondary:hover {
+    color: #91b3d2;
+}
+
+
+/* ==========================================
+   ELEMENTOS CIENTÍFICOS
+========================================== */
+
+.hero-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.physics-graphic {
+    width: min(100%, 410px);
+    aspect-ratio: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.graphic-circle {
+    position: absolute;
+    border: 1px solid rgba(151, 183, 212, .35);
+    border-radius: 50%;
+}
+
+.circle-one {
+    width: 72%;
+    height: 72%;
+}
+
+.circle-two {
+    width: 92%;
+    height: 35%;
+    transform: rotate(-35deg);
+}
+
+.circle-three {
+    width: 92%;
+    height: 35%;
+    transform: rotate(35deg);
+}
+
+.graphic-center {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background: rgba(130, 166, 198, .12);
+    border: 1px solid rgba(151, 183, 212, .6);
+    display: grid;
+    place-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.graphic-center span {
+    font-family: var(--font-editorial);
+    font-size: 65px;
+    font-style: italic;
+    color: #b6d0e8;
+}
+
+.graphic-label {
+    position: absolute;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #a9bfd4;
+}
+
+.label-top {
+    top: 8%;
+    right: 5%;
+}
+
+.label-bottom {
+    bottom: 8%;
+    left: 4%;
+}
+
+.graphic-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #a8c8e5;
+    position: absolute;
+    box-shadow: 0 0 15px rgba(168, 200, 229, .5);
+}
+
+.dot-one {
+    top: 18%;
+    left: 25%;
+}
+
+.dot-two {
+    bottom: 24%;
+    right: 18%;
+}
+
+.dot-three {
+    top: 48%;
+    right: 4%;
+    width: 5px;
+    height: 5px;
+}
+
+.visual-caption {
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: #829ab3;
+    margin-top: 10px;
+}
+
+.hero-footer {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    min-height: 45px;
+    border-top: 1px solid rgba(255,255,255,.13);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #8295aa;
+}
+
+
+/* ==========================================
+   SOBRE
+========================================== */
+
+.about {
+    background: var(--paper);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.section-index {
+    color: var(--blue);
+}
+
+.section-heading h2,
+.team h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(38px, 4vw, 52px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 22px;
+}
+
+.section-heading h2 em,
+.team h2 em {
+    color: var(--blue);
+}
+
+.about-content p {
+    font-size: 15px;
+    color: #65707c;
+    line-height: 2;
+    margin-bottom: 28px;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid #9daab7;
+    padding-bottom: 7px;
+}
+
+
+/* ==========================================
+   TÍTULOS DE SEÇÃO
+========================================== */
+
+.section-top {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    gap: 30px;
+}
+
+.section-top h2 {
+    font-family: var(--font-editorial);
+    font-size: 38px;
+    font-weight: 400;
+    margin-top: 17px;
+}
+
+.section-top > p {
+    max-width: 300px;
+    font-size: 13px;
+    color: var(--gray);
+}
+
+
+/* ==========================================
+   ÁREAS DE ATUAÇÃO
+========================================== */
+
+.areas {
+    background: #eef0ef;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.area-card {
+    min-height: 310px;
+    background: var(--white);
+    padding: 35px;
+    position: relative;
+    transition: .3s;
+    border: 1px solid transparent;
+}
+
+.area-card:hover {
+    border-color: #a8b9c9;
+    transform: translateY(-5px);
+}
+
+.area-number {
+    font-size: 10px;
+    color: #8b949e;
+    letter-spacing: 1px;
+}
+
+.area-icon {
+    font-family: var(--font-editorial);
+    font-size: 40px;
+    color: var(--blue);
+    margin: 30px 0 18px;
+}
+
+.area-card h3 {
+    font-family: var(--font-editorial);
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.area-card p {
+    font-size: 12px;
+    color: var(--gray);
+    max-width: 260px;
+    line-height: 1.8;
+}
+
+.card-arrow {
+    position: absolute;
+    right: 30px;
+    bottom: 28px;
+    font-size: 19px;
+}
+
+
+/* ==========================================
+   DESTAQUES
+========================================== */
+
+.highlights {
+    background: var(--paper);
+}
+
+.highlights-placeholder {
+    min-height: 330px;
+    background: var(--navy);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 55px 65px;
+    overflow: hidden;
+    position: relative;
+}
+
+.placeholder-content {
+    position: relative;
+    z-index: 2;
+    max-width: 510px;
+}
+
+.placeholder-content > span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #94b4d1;
+}
+
+.placeholder-content h3 {
+    font-family: var(--font-editorial);
+    font-size: 37px;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 20px 0;
+}
+
+.placeholder-content p {
+    font-size: 13px;
+    color: #b8c6d5;
+    line-height: 1.8;
+}
+
+.placeholder-symbol {
+    font-family: var(--font-editorial);
+    font-size: 270px;
+    color: rgba(255,255,255,.07);
+    line-height: 1;
+}
+
+
+/* ==========================================
+   EQUIPE
+========================================== */
+
+.team {
+    background: #eef0ef;
+}
+
+.team-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.team-content > div {
+    max-width: 650px;
+}
+
+.team p {
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
+.footer {
+    background: var(--navy);
+    color: var(--white);
+    padding: 65px 0 25px;
+}
+
+.footer-brand > strong {
+    font-family: var(--font-editorial);
+    font-size: 38px;
+    letter-spacing: 3px;
+}
+
+.footer-brand > strong span {
+    color: #91b3d2;
+}
+
+.footer-brand p {
+    font-size: 11px;
+    color: #a9b6c5;
+    line-height: 2;
+    margin-top: 12px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.15);
+    margin-top: 55px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #8295aa;
+}
+
+
+/* ==========================================
+   ACESSIBILIDADE E INTERAÇÃO
+========================================== */
+
+:focus-visible {
+    outline: 2px solid #6d9bc5;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+    }
+}
+
+/* ==========================================
+   LAEF — NOVA PALETA DAS SEÇÕES
+========================================== */
+
+/* SOBRE */
+.about {
+    background: #DCE4EB;
+}
+
+.about-content p {
+    color: #536477;
+}
+
+
+/* ÁREAS DE ATUAÇÃO */
+.areas {
+    background: #101F35;
+}
+
+.areas .section-index {
+    color: #A9C4DD;
+}
+
+.areas .section-top h2 {
+    color: #FFFFFF;
+}
+
+.areas .section-top > p {
+    color: #B9C5D2;
+}
+
+.area-card {
+    background: #192D49;
+    border: 1px solid rgba(255,255,255,.12);
+    color: #FFFFFF;
+}
+
+.area-card:hover {
+    background: #223B5B;
+    border-color: #91B3D2;
+}
+
+.area-number {
+    color: #A9C4DD;
+}
+
+.area-icon {
+    color: #A9C4DD;
+}
+
+.area-card h3 {
+    color: #FFFFFF;
+}
+
+.area-card p {
+    color: #B9C5D2;
+}
+
+.card-arrow {
+    color: #A9C4DD;
+}
+
+
+/* DESTAQUES */
+.highlights {
+    background: #DCE4EB;
+}
+
+.highlights .section-index {
+    color: #537DA5;
+}
+
+
+/* EQUIPE */
+.team {
+    background: #192D49;
+}
+
+.team .section-index {
+    color: #A9C4DD;
+}
+
+.team h2 {
+    color: #FFFFFF;
+}
+
+.team h2 em {
+    color: #A9C4DD;
+}
+
+.team p {
+    color: #B9C5D2;
+}
+
+.team .button-primary {
+    background: #A9C4DD;
+    color: #101F35;
+}
+
+.team .button-primary:hover {
+    background: #FFFFFF;
+}
+
+
+/* ==========================================
+   LAEF — BOTÃO VOLTAR AO TOPO
+========================================== */
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--navy);
+    color: var(--white);
+
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 2px;
+
+    font-size: 25px;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+
+    transition: 
+        opacity .3s ease,
+        visibility .3s ease,
+        transform .3s ease,
+        background .3s ease;
+
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #315477;
+    transform: translateY(-4px);
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid #91B3D2;
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+
+    .back-to-top {
+        width: 42px;
+        height: 42px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+}
+
+/* ACESSO ADMINISTRATIVO */
+
+.admin-access {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+
+    color: #8295AA;
+    font-size: 10px;
+    letter-spacing: .4px;
+    text-decoration: none;
+
+    opacity: .75;
+    transition: .3s ease;
+}
+
+.admin-access svg {
+    flex-shrink: 0;
+}
+
+.admin-access:hover {
+    color: #A9C4DD;
+    opacity: 1;
+}

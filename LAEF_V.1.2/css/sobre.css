@@ -1,0 +1,526 @@
+
+/* ==========================================
+   LAEF — PÁGINA SOBRE
+   Estilo minimalista editorial
+========================================== */
+
+
+/* ==========================================
+   APRESENTAÇÃO
+========================================== */
+
+.about-hero {
+    min-height: 440px;
+    background: var(--navy);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.about-hero-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+
+    background-size: 65px 65px;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 35%,
+        black
+    );
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+
+.about-hero-text {
+    max-width: 750px;
+}
+
+.about-hero-text h1 {
+    font-family: var(--font-editorial);
+    font-size: clamp(65px, 8vw, 105px);
+    font-weight: 400;
+    line-height: 1.05;
+    margin: 25px 0;
+}
+
+.about-hero-text h1 span {
+    color: #91b3d2;
+    font-style: italic;
+}
+
+.about-hero-text p {
+    font-size: 15px;
+    color: #b9c5d2;
+    max-width: 490px;
+    line-height: 1.9;
+}
+
+.about-hero-number {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: 100px;
+}
+
+.about-hero-number > span {
+    font-family: var(--font-editorial);
+    font-size: 90px;
+    color: rgba(255,255,255,.12);
+}
+
+.about-hero-number > div {
+    width: 80px;
+    height: 1px;
+    background: #91b3d2;
+}
+
+.about-hero-number small {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #91b3d2;
+}
+
+.about-hero-footer {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+
+    min-height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255,255,255,.13);
+
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #8295aa;
+}
+
+
+/* ==========================================
+   QUEM SOMOS
+========================================== */
+
+.who-we-are {
+    background: #DCE4EB;
+}
+
+.who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.who-heading h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(40px, 4.5vw, 58px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 25px;
+}
+
+.who-heading h2 em {
+    color: var(--blue);
+}
+
+.who-content {
+    padding-top: 35px;
+}
+
+.who-content p {
+    font-size: 14px;
+    color: #536477;
+    line-height: 2;
+    margin-bottom: 22px;
+}
+
+.who-content .who-lead {
+    font-size: 18px;
+    color: var(--navy);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   PROPÓSITO
+========================================== */
+
+.purpose {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.purpose-heading {
+    max-width: 650px;
+    margin-bottom: 55px;
+}
+
+.purpose-heading .section-index {
+    color: #A9C4DD;
+}
+
+.purpose-heading h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(38px, 4vw, 53px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 22px;
+}
+
+.purpose-heading h2 em {
+    color: #A9C4DD;
+}
+
+.purpose-heading > p {
+    font-size: 13px;
+    color: #B9C5D2;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.purpose-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.purpose-card {
+    min-height: 290px;
+    padding: 32px;
+
+    background: var(--navy-light);
+    border: 1px solid rgba(255,255,255,.12);
+
+    position: relative;
+    transition: .3s;
+}
+
+.purpose-card:hover {
+    transform: translateY(-5px);
+    background: #223B5B;
+    border-color: #91B3D2;
+}
+
+.purpose-number {
+    font-size: 10px;
+    color: #A9C4DD;
+    letter-spacing: 1px;
+}
+
+.purpose-symbol {
+    font-family: var(--font-editorial);
+    font-size: 43px;
+    color: #A9C4DD;
+    margin: 25px 0 15px;
+}
+
+.purpose-card h3 {
+    font-family: var(--font-editorial);
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.purpose-card p {
+    font-size: 12px;
+    color: #B9C5D2;
+    line-height: 1.9;
+}
+
+
+/* ==========================================
+   ATUAÇÃO ACADÊMICA
+========================================== */
+
+.academic {
+    background: #DCE4EB;
+}
+
+.academic-grid {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.academic-heading h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(40px, 4vw, 54px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 22px;
+}
+
+.academic-heading h2 em {
+    color: var(--blue);
+}
+
+.academic-content > p {
+    font-size: 14px;
+    color: #536477;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.academic-list {
+    border-top: 1px solid rgba(16,31,53,.2);
+}
+
+.academic-item {
+    display: grid;
+    grid-template-columns: 35px 1fr 25px;
+    align-items: center;
+    gap: 18px;
+
+    padding: 23px 0;
+
+    border-bottom: 1px solid rgba(16,31,53,.2);
+
+    transition: .3s;
+}
+
+.academic-item:hover {
+    padding-left: 10px;
+}
+
+.academic-item > span:first-child {
+    font-size: 10px;
+    color: var(--blue);
+}
+
+.academic-item h3 {
+    font-family: var(--font-editorial);
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.academic-item p {
+    font-size: 12px;
+    color: #65707c;
+    margin-top: 5px;
+}
+
+.academic-arrow {
+    font-size: 19px;
+    color: var(--blue);
+}
+
+
+/* ==========================================
+   VÍNCULO INSTITUCIONAL
+========================================== */
+
+.institution {
+    background: var(--navy-light);
+    color: var(--white);
+}
+
+.institution-content {
+    max-width: var(--container);
+}
+
+.institution .section-index {
+    color: #A9C4DD;
+}
+
+.institution h2 {
+    max-width: 800px;
+    font-family: var(--font-editorial);
+    font-size: clamp(40px, 5vw, 65px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 25px;
+}
+
+.institution h2 em {
+    color: #A9C4DD;
+}
+
+.institution-content > p {
+    max-width: 570px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #B9C5D2;
+    margin-top: 25px;
+}
+
+.institution-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    margin-top: 65px;
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255,255,255,.18);
+}
+
+.institution-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.institution-details span {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #A9C4DD;
+}
+
+.institution-details strong {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+
+/* ==========================================
+   ENCERRAMENTO
+========================================== */
+
+.about-closing {
+    background: #DCE4EB;
+    padding: 100px 0;
+}
+
+.closing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.closing-content .section-index {
+    color: var(--blue);
+}
+
+.closing-content h2 {
+    max-width: 700px;
+    font-family: var(--font-editorial);
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 25px 0 35px;
+}
+
+.closing-content h2 em {
+    color: var(--blue);
+}
+
+.closing-content .button-primary {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.closing-content .button-primary:hover {
+    background: var(--navy-light);
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE — SOBRE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .who-grid,
+    .academic-grid {
+        gap: 50px;
+    }
+
+}
+
+@media (max-width: 760px) {
+
+    .about-hero {
+        min-height: 420px;
+    }
+
+    .about-hero-content {
+        padding-top: 75px;
+        padding-bottom: 85px;
+    }
+
+    .about-hero-text h1 {
+        font-size: 65px;
+    }
+
+    .about-hero-number {
+        display: none;
+    }
+
+    .about-hero-footer {
+        font-size: 7px;
+        letter-spacing: .5px;
+        gap: 10px;
+    }
+
+    .who-grid,
+    .academic-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .who-content {
+        padding-top: 0;
+    }
+
+    .purpose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .purpose-card {
+        min-height: 250px;
+    }
+
+    .institution-details {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 45px;
+    }
+
+    .about-closing {
+        padding: 75px 0;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .about-hero-text h1 {
+        font-size: 54px;
+    }
+
+    .about-hero-text p {
+        font-size: 13px;
+    }
+
+    .academic-item {
+        grid-template-columns: 25px 1fr 20px;
+        gap: 12px;
+    }
+
+}

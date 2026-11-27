@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Consulte artigos, trabalhos e produções acadêmicas do LAEF.">
+
+    <title>Publicações | LAEF</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/conteudo.css">
+
+    <!-- JAVASCRIPT -->
+    <script src="js/main.js" defer></script>
+    <script type="module" src="js/publicacoes.js"></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="header">
+
+        <div class="container header-content">
+
+            <a href="index.html" class="brand">
+
+                <div class="brand-logo">
+                    <img src="assets/img/logo.png" alt="Logo LAEF">
+                </div>
+
+                <div class="brand-text">
+                    <strong>LAEF</strong>
+                    <span>Laboratório de Ensino de Física Marta Pernambuco</span>
+                </div>
+
+            </a>
+
+            <button class="menu-toggle"
+                aria-label="Abrir menu"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navigation">
+
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="ensino.html">Ensino</a>
+                <a href="pesquisa.html">Pesquisa</a>
+                <a href="extensao.html">Extensão</a>
+                <a href="equipe.html">Equipe</a>
+                <a href="publicacoes.html" class="active">Publicações</a>
+                <a href="materiais.html">Materiais e Experimentos</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="content-hero">
+
+            <div class="content-hero-grid"></div>
+
+            <div class="container content-hero-content">
+
+                <span class="eyebrow">
+                    LAEF · PRODUÇÃO ACADÊMICA
+                </span>
+
+                <h1>
+                    Publicações<span>.</span>
+                </h1>
+
+                <p>
+                    Um espaço dedicado à divulgação e ao acesso
+                    às produções acadêmicas e científicas
+                    relacionadas às atividades do laboratório.
+                </p>
+
+            </div>
+
+            <div class="content-hero-footer">
+                <span>ARTIGOS · TRABALHOS · PRODUÇÃO CIENTÍFICA</span>
+                <span>UFPE · CAA</span>
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUÇÃO -->
+
+        <section class="publications-intro section-padding">
+
+            <div class="container publications-intro-grid">
+
+                <div>
+                    <span class="section-index">01 / PRODUÇÃO CIENTÍFICA</span>
+
+                    <h2>
+                        Conhecimento produzido
+                        <em>e compartilhado.</em>
+                    </h2>
+                </div>
+
+                <div>
+                    <p>
+                        A produção acadêmica representa uma dimensão
+                        importante da construção e da divulgação
+                        do conhecimento científico.
+                    </p>
+
+                    <p>
+                        Nesta página serão reunidos trabalhos,
+                        artigos, pesquisas e outras produções
+                        relacionadas às atividades do LAEF.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACERVO -->
+
+        <section class="publications-library section-padding">
+
+            <div class="container">
+
+                <div class="library-heading">
+
+                    <div>
+                        <span class="section-index">
+                            02 / ACERVO ACADÊMICO
+                        </span>
+
+                        <h2>
+                            Explore as publicações.
+                        </h2>
+                    </div>
+
+                    <span class="library-label">
+                        BIBLIOTECA LAEF
+                    </span>
+
+                </div>
+
+
+                <!-- BUSCA -->
+
+                <div class="publication-controls">
+
+                    <div class="publication-search">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="search"
+                            id="publication-search"
+                            placeholder="Pesquisar título, autor ou palavra-chave..."
+                            aria-label="Pesquisar publicações">
+
+                    </div>
+
+
+                    <select id="publication-year"
+                        aria-label="Filtrar por ano">
+
+                        <option value="">Todos os anos</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CATEGORIAS -->
+
+                <div class="publication-filters">
+
+                    <button class="filter-button active"
+                        data-filter="todos">
+                        Todas
+                    </button>
+
+                    <button class="filter-button"
+                        data-filter="artigo">
+                        Artigos
+                    </button>
+
+                    <button class="filter-button"
+                        data-filter="evento">
+                        Eventos
+                    </button>
+
+                    <button class="filter-button"
+                        data-filter="tcc">
+                        Trabalhos acadêmicos
+                    </button>
+
+                    <button class="filter-button"
+                        data-filter="livro">
+                        Livros e capítulos
+                    </button>
+
+                    <button class="filter-button"
+                        data-filter="outros">
+                        Outros
+                    </button>
+
+                </div>
+
+
+                <!-- LISTAGEM DINÂMICA -->
+
+                <div class="publication-list"
+                    id="publication-list">
+
+                    <div class="publication-empty">
+
+                        <span>∅</span>
+
+                        <h3>Acervo em organização</h3>
+
+                        <p>
+                            As publicações do LAEF serão
+                            disponibilizadas neste espaço.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="publication-count"
+                    id="publication-count">
+
+                    Nenhuma publicação cadastrada.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ENCERRAMENTO -->
+
+        <section class="publication-closing">
+
+            <div class="container">
+
+                <span class="section-index">
+                    LAEF · CONHECIMENTO EM MOVIMENTO
+                </span>
+
+                <h2>
+                    Compartilhar resultados
+                    é ampliar o alcance da ciência.
+                </h2>
+
+                <a href="pesquisa.html" class="button-primary">
+                    Conheça nossas pesquisas
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+<!-- RODAPÉ -->
+    <footer class="footer">
+
+    <div class="container footer-content">
+
+        <div class="footer-brand">
+
+            <strong>LAEF<span>.</span></strong>
+
+            <p>
+               Laboratório de Ensino de Física Marta Pernambuco
+                <br>
+                UFPE · Centro Acadêmico do Agreste
+            </p>
+
+        </div>
+
+        <!-- ACESSO ADMINISTRATIVO -->
+        <a href="adm/login.html" class="admin-access">
+
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="13"
+        height="13"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <rect x="4" y="10" width="16" height="11" rx="2"/>
+        <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+
+    </svg>
+
+    <span>Acesso administrativo</span>
+
+</a>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 LAEF. Todos os direitos reservados.
+            </span>
+
+            <span>
+                Caruaru · Pernambuco · Brasil
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+</body>
+</html>
